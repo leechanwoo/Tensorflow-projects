@@ -5,40 +5,40 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 TensorflowOnAir_CNN_Example.py	TensorflowOnAir_CNN_Example.py	1;"	kind:file	line:1
-accuracy	TensorflowOnAir_CNN_Example.py	/^accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))$/;"	kind:variable	line:70
-coord	TensorflowOnAir_CNN_Example.py	/^    coord = tf.train.Coordinator()$/;"	kind:variable	line:73
-correct_prediction	TensorflowOnAir_CNN_Example.py	/^correct_prediction = tf.equal(tf.argmax(pred,1), tf.argmax(y_,1))$/;"	kind:variable	line:69
-drop_fc	TensorflowOnAir_CNN_Example.py	/^drop_fc = tf.nn.dropout(h_fc1, 0.7)$/;"	kind:variable	line:62
-fc_b	TensorflowOnAir_CNN_Example.py	/^fc_b = tf.Variable(tf.zeros([10]))$/;"	kind:variable	line:45
-fc_w	TensorflowOnAir_CNN_Example.py	/^fc_w = tf.Variable(tf.truncated_normal([49*61*64, 10]))$/;"	kind:variable	line:44
-h_conv1	TensorflowOnAir_CNN_Example.py	/^h_conv1 = tf.nn.relu(tf.nn.conv2d(x_image, hidden1_w, strides=[1, 1, 1, 1], padding="SAME") + hidden1_b)$/;"	kind:variable	line:53
-h_conv2	TensorflowOnAir_CNN_Example.py	/^h_conv2 = tf.nn.relu(tf.nn.conv2d(h_pool1, hidden2_w, strides=[1, 1, 1, 1], padding="SAME") + hidden2_b)$/;"	kind:variable	line:56
-h_fc1	TensorflowOnAir_CNN_Example.py	/^h_fc1 = tf.nn.relu(tf.matmul(h_flat, fc_w) + fc_b)$/;"	kind:variable	line:60
-h_flat	TensorflowOnAir_CNN_Example.py	/^h_flat = tf.reshape(h_pool2, [-1, 49*61*64])$/;"	kind:variable	line:59
-h_pool1	TensorflowOnAir_CNN_Example.py	/^h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1, 2, 2, 1], strides=[1, 1, 1, 1], padding='SAME')$/;"	kind:variable	line:54
-h_pool2	TensorflowOnAir_CNN_Example.py	/^h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1, 2, 2, 1], strides=[1, 1, 1, 1], padding='SAME')$/;"	kind:variable	line:57
-hidden1_b	TensorflowOnAir_CNN_Example.py	/^hidden1_b = tf.Variable(tf.zeros([32]))$/;"	kind:variable	line:39
-hidden1_w	TensorflowOnAir_CNN_Example.py	/^hidden1_w = tf.Variable(tf.truncated_normal([5,5,1,32]))$/;"	kind:variable	line:38
-hidden2_b	TensorflowOnAir_CNN_Example.py	/^hidden2_b = tf.Variable(tf.truncated_normal([64]))$/;"	kind:variable	line:42
-hidden2_w	TensorflowOnAir_CNN_Example.py	/^hidden2_w = tf.Variable(tf.truncated_normal([5,5,32,64]))$/;"	kind:variable	line:41
-image	TensorflowOnAir_CNN_Example.py	/^image = tf.reshape(image_decoded, [image_width, image_height, 1])$/;"	kind:variable	line:33
-image_decoded	TensorflowOnAir_CNN_Example.py	/^image_decoded = tf.cast(tf.image.decode_png(image_value), tf.float32)$/;"	kind:variable	line:29
+accuracy	TensorflowOnAir_CNN_Example.py	/^accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))$/;"	kind:variable	line:68
+coord	TensorflowOnAir_CNN_Example.py	/^    coord = tf.train.Coordinator()$/;"	kind:variable	line:71
+correct_prediction	TensorflowOnAir_CNN_Example.py	/^correct_prediction = tf.equal(tf.argmax(pred,1), tf.argmax(y_,1))$/;"	kind:variable	line:67
+drop_fc	TensorflowOnAir_CNN_Example.py	/^drop_fc = tf.nn.dropout(h_fc1, 0.7)$/;"	kind:variable	line:60
+fc_b	TensorflowOnAir_CNN_Example.py	/^fc_b = tf.Variable(tf.zeros([10]))$/;"	kind:variable	line:43
+fc_w	TensorflowOnAir_CNN_Example.py	/^fc_w = tf.Variable(tf.truncated_normal([49*61*64, 10]))$/;"	kind:variable	line:42
+h_conv1	TensorflowOnAir_CNN_Example.py	/^h_conv1 = tf.nn.relu(tf.nn.conv2d(x_image, hidden1_w, strides=[1, 1, 1, 1], padding="SAME") + hidden1_b)$/;"	kind:variable	line:51
+h_conv2	TensorflowOnAir_CNN_Example.py	/^h_conv2 = tf.nn.relu(tf.nn.conv2d(h_pool1, hidden2_w, strides=[1, 1, 1, 1], padding="SAME") + hidden2_b)$/;"	kind:variable	line:54
+h_fc1	TensorflowOnAir_CNN_Example.py	/^h_fc1 = tf.nn.relu(tf.matmul(h_flat, fc_w) + fc_b)$/;"	kind:variable	line:58
+h_flat	TensorflowOnAir_CNN_Example.py	/^h_flat = tf.reshape(h_pool2, [-1, 49*61*64])$/;"	kind:variable	line:57
+h_pool1	TensorflowOnAir_CNN_Example.py	/^h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1, 2, 2, 1], strides=[1, 1, 1, 1], padding='SAME')$/;"	kind:variable	line:52
+h_pool2	TensorflowOnAir_CNN_Example.py	/^h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1, 2, 2, 1], strides=[1, 1, 1, 1], padding='SAME')$/;"	kind:variable	line:55
+hidden1_b	TensorflowOnAir_CNN_Example.py	/^hidden1_b = tf.Variable(tf.zeros([32]))$/;"	kind:variable	line:37
+hidden1_w	TensorflowOnAir_CNN_Example.py	/^hidden1_w = tf.Variable(tf.truncated_normal([5,5,1,32]))$/;"	kind:variable	line:36
+hidden2_b	TensorflowOnAir_CNN_Example.py	/^hidden2_b = tf.Variable(tf.truncated_normal([64]))$/;"	kind:variable	line:40
+hidden2_w	TensorflowOnAir_CNN_Example.py	/^hidden2_w = tf.Variable(tf.truncated_normal([5,5,32,64]))$/;"	kind:variable	line:39
+image	TensorflowOnAir_CNN_Example.py	/^image = tf.reshape(image_decoded, [image_width, image_height, 1])$/;"	kind:variable	line:31
+image_decoded	TensorflowOnAir_CNN_Example.py	/^image_decoded = tf.cast(tf.image.decode_png(image_value), tf.float32)$/;"	kind:variable	line:27
 image_dir	TensorflowOnAir_CNN_Example.py	/^image_dir = "..\/Temp_data_Set\/Test_Dataset_png\/"$/;"	kind:variable	line:6
 image_height	TensorflowOnAir_CNN_Example.py	/^image_height = 49$/;"	kind:variable	line:8
-image_list	TensorflowOnAir_CNN_Example.py	/^image_list = os.listdir(image_dir)$/;"	kind:variable	line:12
-image_reader	TensorflowOnAir_CNN_Example.py	/^image_reader = tf.WholeFileReader()$/;"	kind:variable	line:23
+image_list	TensorflowOnAir_CNN_Example.py	/^image_list = os.listdir(image_dir)$/;"	kind:variable	line:10
+image_reader	TensorflowOnAir_CNN_Example.py	/^image_reader = tf.WholeFileReader()$/;"	kind:variable	line:21
 image_width	TensorflowOnAir_CNN_Example.py	/^image_width = 61$/;"	kind:variable	line:7
-imagename_queue	TensorflowOnAir_CNN_Example.py	/^imagename_queue = tf.train.string_input_producer(image_list)$/;"	kind:variable	line:20
-label	TensorflowOnAir_CNN_Example.py	/^label = tf.reshape(label_decoded, [1])$/;"	kind:variable	line:32
-label_decoded	TensorflowOnAir_CNN_Example.py	/^label_decoded = tf.cast(tf.decode_csv(label_value, record_defaults=[[0]]), tf.float32)$/;"	kind:variable	line:30
-label_dir	TensorflowOnAir_CNN_Example.py	/^label_dir = "..\/Temp_data_Set\/Test_Dataset_csv\/Label.csv"$/;"	kind:variable	line:17
-label_list	TensorflowOnAir_CNN_Example.py	/^label_list = [label_dir]$/;"	kind:variable	line:18
-label_reader	TensorflowOnAir_CNN_Example.py	/^label_reader = tf.TextLineReader()$/;"	kind:variable	line:24
-labelname_queue	TensorflowOnAir_CNN_Example.py	/^labelname_queue = tf.train.string_input_producer(label_list)$/;"	kind:variable	line:21
-loss	TensorflowOnAir_CNN_Example.py	/^loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(pred, y_))$/;"	kind:variable	line:66
-out_b	TensorflowOnAir_CNN_Example.py	/^out_b = tf.Variable(tf.zeros([1]))$/;"	kind:variable	line:48
-out_w	TensorflowOnAir_CNN_Example.py	/^out_w = tf.Variable(tf.truncated_normal([10, 1]))$/;"	kind:variable	line:47
-pred	TensorflowOnAir_CNN_Example.py	/^pred = tf.matmul(drop_fc, out_w) + out_b$/;"	kind:variable	line:64
-thread	TensorflowOnAir_CNN_Example.py	/^    thread = tf.train.start_queue_runners(sess=sess, coord=coord)$/;"	kind:variable	line:74
-train	TensorflowOnAir_CNN_Example.py	/^train = tf.train.AdamOptimizer(1e-4).minimize(loss)$/;"	kind:variable	line:67
-x_image	TensorflowOnAir_CNN_Example.py	/^x_image = tf.reshape(x, [-1, image_width, image_height, 1])$/;"	kind:variable	line:51
+imagename_queue	TensorflowOnAir_CNN_Example.py	/^imagename_queue = tf.train.string_input_producer(image_list)$/;"	kind:variable	line:18
+label	TensorflowOnAir_CNN_Example.py	/^label = tf.reshape(label_decoded, [1])$/;"	kind:variable	line:30
+label_decoded	TensorflowOnAir_CNN_Example.py	/^label_decoded = tf.cast(tf.decode_csv(label_value, record_defaults=[[0]]), tf.float32)$/;"	kind:variable	line:28
+label_dir	TensorflowOnAir_CNN_Example.py	/^label_dir = "..\/Temp_data_Set\/Test_Dataset_csv\/Label.csv"$/;"	kind:variable	line:15
+label_list	TensorflowOnAir_CNN_Example.py	/^label_list = [label_dir]$/;"	kind:variable	line:16
+label_reader	TensorflowOnAir_CNN_Example.py	/^label_reader = tf.TextLineReader()$/;"	kind:variable	line:22
+labelname_queue	TensorflowOnAir_CNN_Example.py	/^labelname_queue = tf.train.string_input_producer(label_list)$/;"	kind:variable	line:19
+loss	TensorflowOnAir_CNN_Example.py	/^loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(pred, y_))$/;"	kind:variable	line:64
+out_b	TensorflowOnAir_CNN_Example.py	/^out_b = tf.Variable(tf.zeros([1]))$/;"	kind:variable	line:46
+out_w	TensorflowOnAir_CNN_Example.py	/^out_w = tf.Variable(tf.truncated_normal([10, 1]))$/;"	kind:variable	line:45
+pred	TensorflowOnAir_CNN_Example.py	/^pred = tf.matmul(drop_fc, out_w) + out_b$/;"	kind:variable	line:62
+thread	TensorflowOnAir_CNN_Example.py	/^    thread = tf.train.start_queue_runners(sess=sess, coord=coord)$/;"	kind:variable	line:72
+train	TensorflowOnAir_CNN_Example.py	/^train = tf.train.AdamOptimizer(1e-4).minimize(loss)$/;"	kind:variable	line:65
+x_image	TensorflowOnAir_CNN_Example.py	/^x_image = tf.reshape(x, [-1, image_width, image_height, 1])$/;"	kind:variable	line:49
