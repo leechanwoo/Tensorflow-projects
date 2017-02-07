@@ -67,25 +67,25 @@ class CNN(object):
 
         x_image = tf.reshape(self.image_batch, [-1, CONST.image_width, CONST.image_height, 1])
 
-        l_h_conv1 = tf.nn.relu(self._conv(x_image, self.hidden1_w) + self.hidden1_b)
-        l_h_pool1 = self._max_pool(l_h_conv1)
+        h_conv1 = tf.nn.relu(self._conv(x_image, self.hidden1_w) + self.hidden1_b)
+        h_pool1 = self._max_pool(h_conv1)
 
-        l_h_conv2 = tf.nn.relu(self._conv(l_h_pool1, self.hidden2_w) + self.hidden2_b)
-        l_h_pool2 = self._max_pool(l_h_conv2)
+        h_conv2 = tf.nn.relu(self._conv(h_pool1, self.hidden2_w) + self.hidden2_b)
+        h_pool2 = self._max_pool(h_conv2)
 
-        l_h_flat = tf.reshape(l_h_pool2, [-1, 49*61*64])
-        l_h_fc1 = tf.nn.relu(tf.matmul(l_h_flat, self.fc_w) + self.fc_b)
+        h_flat = tf.reshape(h_pool2, [-1, 49*61*64])
 
-        l_drop_fc = tf.nn.dropout(l_h_fc1, CONST.keep_prob)
+        h_fully_connected = tf.nn.relu(tf.matmul(h_flat, self.fc_w) + self.fc_b)
+        h_dropout = tf.nn.dropout(h_fully_connected, CONST.keep_prob)
 
-        self.pred = tf.matmul(l_drop_fc, self.out_w) + self.out_b
+        self.pred = tf.matmul(h_dropout, self.out_w) + self.out_b
 
-        l_entropy = tf.nn.sigmoid_cross_entropy_with_logits(self.pred, self.label_batch)
-        self.loss = tf.reduce_mean(l_entropy)
+        tr_entropy = tf.nn.sigmoid_cross_entropy_with_logits(self.pred, self.label_batch)
+        self.loss = tf.reduce_mean(tr_entropy)
         self.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(self.loss)
 
-        l_correct_prediction = tf.equal(tf.argmax(self.pred, 1), tf.argmax(self.label_batch, 1))
-        self.accuracy = tf.reduce_mean(tf.cast(l_correct_prediction, tf.float32))
+        ev_correct_prediction = tf.equal(tf.argmax(self.pred, 1), tf.argmax(self.label_batch, 1))
+        self.accuracy = tf.reduce_mean(tf.cast(ev_correct_prediction, tf.float32))
 
     def run(self):
         """
@@ -126,7 +126,6 @@ class CNN(object):
 
         cls.out_w = tf.Variable(tf.truncated_normal([10, 1]))
         cls.out_b = tf.Variable(tf.zeros([1]))
-
 
 def main(_):
     '''
