@@ -42,11 +42,11 @@ class CNN(object):
         """
         load csv file
         """
-        l_label_reader = tf.TextLineReader()
-        l_labelname_queue = tf.train.string_input_producer(filename_list)
-        _, l_label_value = l_label_reader.read(l_labelname_queue)
-        l_label_decoded = tf.cast(tf.decode_csv(l_label_value, record_defaults=[[0]]), tf.float32)
-        self.labels = tf.reshape(l_label_decoded, [1])
+        ob_label_reader = tf.TextLineReader()
+        qu_labelname_queue = tf.train.string_input_producer(filename_list)
+        _, ts_label_value = ob_label_reader.read(qu_labelname_queue)
+        ts_label_decoded = tf.cast(tf.decode_csv(ts_label_value, record_defaults=[[0]]), tf.float32)
+        self.labels = tf.reshape(ts_label_decoded, [1])
 
     def build_batch(self):
         """
