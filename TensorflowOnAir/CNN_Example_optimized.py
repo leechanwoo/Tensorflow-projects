@@ -8,13 +8,13 @@ from tensorflow import cast, reshape, matmul, float32
 from tensorflow import reduce_mean, argmax, truncated_normal, zeros, equal
 
 CONST = app.flags
-CONST.DEFINE_string("image_dir", "../Temp_data_Set/Test_Dataset_png/", "image directory")
-CONST.DEFINE_string("label_dir", "../Temp_data_Set/Test_Dataset_csv/Label.csv", "label directory")
+CONST.DEFINE_string("image_dir", "Temp_data_Set/Test_Dataset_png/", "image directory")
+CONST.DEFINE_string("label_dir", "Temp_data_Set/Test_Dataset_csv/Label.csv", "label directory")
 CONST.DEFINE_integer("image_width", 61, "image width")
 CONST.DEFINE_integer("image_height", 49, "image height")
 CONST.DEFINE_float("keep_prob", 0.7, "keep probability for dropout")
 CONST.DEFINE_float("learning_rate", 1e-4, "learning rate for Gradient Descent")
-CONST.DEFINE_integer("epoch", 100, "epoch for learning")
+CONST.DEFINE_integer("epoch", 2, "epoch for learning")
 CONST.DEFINE_integer("batch_size", 32, "mini mbatch size of data set")
 CONST.DEFINE_integer("num_thread", 4, "number of threads for queue threading")
 CONST.DEFINE_integer("capacity", 5000, "queue capacity")
