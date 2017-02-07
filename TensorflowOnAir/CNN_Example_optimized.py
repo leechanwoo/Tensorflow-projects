@@ -24,11 +24,15 @@ class CNN(object):
     def __init__(self, image_name_list=None, label_name_list=None):
         if image_name_list and label_name_list is not None:
             self._load_png(image_name_list)
+            print "image ready to load"
             self._load_csv(label_name_list)
+            print "csv ready to load"
             self._build_batch()
+            print "batching graph created"
             self._build_graph()
+            print "op graph created"
             self._initialize()
-            print "ready to run"
+            print "initialized, ready to run"
         else:
             print "please call the method _load_png()"
             print "please call the method _load_csv()"
