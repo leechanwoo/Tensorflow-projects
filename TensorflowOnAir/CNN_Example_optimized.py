@@ -32,11 +32,11 @@ class CNN(object):
         """
         load png images
         """
-        l_image_reader = tf.WholeFileReader()
-        l_imagename_queue = tf.train.string_input_producer(filename_list)
-        _, l_image_value = l_image_reader.read(l_imagename_queue)
-        l_image_decoded = tf.cast(tf.image.decode_png(l_image_value), tf.float32)
-        self.images = tf.reshape(l_image_decoded, [CONST.image_width, CONST.image_height, 1])
+        ob_image_reader = tf.WholeFileReader()
+        qu_image_name = tf.train.string_input_producer(filename_list)
+        _, t_image_value = ob_image_reader.read(qu_image_name)
+        ts_image_decoded = tf.cast(tf.image.decode_png(t_image_value), tf.float32)
+        self.images = tf.reshape(ts_image_decoded, [CONST.image_width, CONST.image_height, 1])
 
     def load_csv(self, filename_list):
         """
