@@ -9,7 +9,7 @@ CONST.DEFINE_integer("image_width", 61, "image width")
 CONST.DEFINE_integer("image_height", 49, "image height")
 CONST.DEFINE_float("keep_prob", 0.7, "keep probability for dropout")
 CONST.DEFINE_float("learning_rate", 1e-4, "learning rate for Gradient Descent")
-CONST.DEFINE_integer("epoch", 2, "epoch for learning")
+CONST.DEFINE_integer("epoch", 100, "epoch for learning")
 CONST.DEFINE_integer("batch_size", 32, "mini mbatch size of data set")
 CONST.DEFINE_integer("num_threads", 4, "number of threads for queue threading")
 CONST.DEFINE_integer("capacity", 5000, "queue capacity")
@@ -21,30 +21,55 @@ class CNN(object):
     """
     convolutional neural network class
     """
-    def __init__(self, image_name_list, label_name_list):
-        self._load_png(image_name_list)
-        self._load_csv(label_name_list)
-        self._build_batch()
-        self._build_graph()
-        print "ready to run"
+    def __init__(self, image_name_list=None, label_name_list=None):
+        if image_name_list and label_name_list is not None:
+            self._load_png(image_name_list)
+            self._load_csv(label_name_list)
+            self._build_batch()
+            self._build_graph()
+            self._initialize()
+            print "ready to run"
+        else:
+            print "please call the method _load_png()"
+            print "please call the method _load_csv()"
+            print "please call the method _build_batch()"
+            print "please call the method _build_graph()"
+
+    def tprint(self, tensor):
+        """
+        print the tensor in session
+        """
+        print self.sess.run(tensor)
 
     def run(self):
         """
-        run the model
+        learning the model
         """
-        with tf.Session() as sess:
-            coord = tf.train.Coordinator()
-            thread = tf.train.start_queue_runners(sess=sess, coord=coord)
+        for _ in range(CONST.epoch):
+            self.sess.run(self.train)
+            print "loss: ", self.sess.run(self.loss)
+            print "accuracy: ", self.sess.run(self.accuracy)
 
-            sess.run(tf.global_variables_initializer())
+        self._close_session()
 
-            for _ in range(CONST.epoch):
-                sess.run(self.train)
-                print "loss: ", sess.run(self.loss)
-                print "accuracy: ", sess.run(self.accuracy)
+    @classmethod
+    def _initialize(cls):
+        """
+        open the session and initialize the model
+        """
+        cls.sess = tf.Session()
+        cls.coord = tf.train.Coordinator()
+        cls.thread = tf.train.start_queue_runners(sess=cls.sess, coord=cls.coord)
+        cls.sess.run(tf.global_variables_initializer())
 
-            coord.request_stop()
-            coord.join(thread)
+    @classmethod
+    def _close_session(cls):
+        """
+        close the session and kill all of the queue threads
+        """
+        cls.coord.request_stop()
+        cls.coord.join(cls.thread)
+        cls.sess.close()
 
     @classmethod
     def _load_png(cls, filename_list):
@@ -66,7 +91,7 @@ class CNN(object):
         qu_labelname_queue = tf.train.string_input_producer(filename_list)
         _, ts_label_value = ob_label_reader.read(qu_labelname_queue)
         ts_label_decoded = tf.cast(tf.decode_csv(ts_label_value, record_defaults=[[0]]), tf.float32)
-        cls.labels = tf.reshape(ts_label_decoded, [1])
+        cls.labels = tf.cast(tf.reshape(ts_label_decoded, [1]) > 30, tf.float32)
 
     @classmethod
     def _build_batch(cls):
@@ -100,14 +125,14 @@ class CNN(object):
         h_fully_connected = tf.nn.relu(tf.matmul(h_flat, cls.fc_w) + cls.fc_b)
         h_dropout = tf.nn.dropout(h_fully_connected, CONST.keep_prob)
 
-        cls.pred = tf.matmul(h_dropout, cls.out_w) + cls.out_b
+        cls.pred = tf.nn.sigmoid(tf.matmul(h_dropout, cls.out_w) + cls.out_b)
 
         tr_entropy = tf.nn.sigmoid_cross_entropy_with_logits(cls.pred, cls.label_batch)
         cls.loss = tf.reduce_mean(tr_entropy)
         cls.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(cls.loss)
 
-        ev_correct_prediction = tf.equal(tf.argmax(cls.pred, 1), tf.argmax(cls.label_batch, 1))
-        cls.accuracy = tf.reduce_mean(tf.cast(ev_correct_prediction, tf.float32))
+        cls.ev_correct_prediction = tf.equal(cls.pred, cls.label_batch)
+        cls.accuracy = tf.reduce_mean(tf.cast(cls.ev_correct_prediction, tf.float32))
 
     @classmethod
     def _conv(cls, tensor1, tensor2):
