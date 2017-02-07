@@ -22,31 +22,11 @@ class CNN(object):
     convolutional neural network class
     """
     def __init__(self, image_name_list, label_name_list):
-        self.load_png(image_name_list)
-        self.load_csv(label_name_list)
+        self._load_png(image_name_list)
+        self._load_csv(label_name_list)
         self.build_batch()
         self.build_graph()
         print "ready to run"
-
-    def load_png(self, filename_list):
-        """
-        load png images
-        """
-        ob_image_reader = tf.WholeFileReader()
-        qu_image_name = tf.train.string_input_producer(filename_list)
-        _, ts_image_value = ob_image_reader.read(qu_image_name)
-        ts_image_decoded = tf.cast(tf.image.decode_png(ts_image_value), tf.float32)
-        self.images = tf.reshape(ts_image_decoded, [CONST.image_width, CONST.image_height, 1])
-
-    def load_csv(self, filename_list):
-        """
-        load csv file
-        """
-        ob_label_reader = tf.TextLineReader()
-        qu_labelname_queue = tf.train.string_input_producer(filename_list)
-        _, ts_label_value = ob_label_reader.read(qu_labelname_queue)
-        ts_label_decoded = tf.cast(tf.decode_csv(ts_label_value, record_defaults=[[0]]), tf.float32)
-        self.labels = tf.reshape(ts_label_decoded, [1])
 
     def build_batch(self):
         """
@@ -54,10 +34,10 @@ class CNN(object):
         """
         self.image_batch, self.label_batch = tf.train.shuffle_batch(
             tensors=[self.images, self.labels],
-            batch_size=32,
-            num_threads=4,
-            capacity=5000,
-            min_after_dequeue=100)
+            batch_size=CONST.batch_size,
+            num_threads=CONST.num_threads,
+            capacity=CONST.capacity,
+            min_after_dequeue=CONST.min_after_dequeue)
 
     def build_graph(self):
         """
@@ -104,6 +84,28 @@ class CNN(object):
 
         coord.request_stop()
         coord.join(thread)
+
+    @classmethod
+    def _load_png(cls, filename_list):
+        """
+        load png images
+        """
+        ob_image_reader = tf.WholeFileReader()
+        qu_image_name = tf.train.string_input_producer(filename_list)
+        _, ts_image_value = ob_image_reader.read(qu_image_name)
+        ts_image_decoded = tf.cast(tf.image.decode_png(ts_image_value), tf.float32)
+        cls.images = tf.reshape(ts_image_decoded, [CONST.image_width, CONST.image_height, 1])
+
+    @classmethod
+    def _load_csv(cls, filename_list):
+        """
+        load csv file
+        """
+        ob_label_reader = tf.TextLineReader()
+        qu_labelname_queue = tf.train.string_input_producer(filename_list)
+        _, ts_label_value = ob_label_reader.read(qu_labelname_queue)
+        ts_label_decoded = tf.cast(tf.decode_csv(ts_label_value, record_defaults=[[0]]), tf.float32)
+        cls.labels = tf.reshape(ts_label_decoded, [1])
 
     @classmethod
     def _conv(cls, tensor1, tensor2):
