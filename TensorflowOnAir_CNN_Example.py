@@ -7,8 +7,6 @@ image_dir = "../Temp_data_Set/Test_Dataset_png/"
 image_width = 61
 image_height = 49
 
-
-
 image_list = os.listdir(image_dir)
 
 for i in xrange(len(image_list)):
