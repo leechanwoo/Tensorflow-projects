@@ -24,48 +24,9 @@ class CNN(object):
     def __init__(self, image_name_list, label_name_list):
         self._load_png(image_name_list)
         self._load_csv(label_name_list)
-        self.build_batch()
-        self.build_graph()
+        self._build_batch()
+        self._build_graph()
         print "ready to run"
-
-    def build_batch(self):
-        """
-        building mini batches
-        """
-        self.image_batch, self.label_batch = tf.train.shuffle_batch(
-            tensors=[self.images, self.labels],
-            batch_size=CONST.batch_size,
-            num_threads=CONST.num_threads,
-            capacity=CONST.capacity,
-            min_after_dequeue=CONST.min_after_dequeue)
-
-    def build_graph(self):
-        """
-        building graph
-        """
-        self._set_variables()
-
-        x_image = tf.reshape(self.image_batch, [-1, CONST.image_width, CONST.image_height, 1])
-
-        h_conv1 = tf.nn.relu(self._conv(x_image, self.hidden1_w) + self.hidden1_b)
-        h_pool1 = self._max_pool(h_conv1)
-
-        h_conv2 = tf.nn.relu(self._conv(h_pool1, self.hidden2_w) + self.hidden2_b)
-        h_pool2 = self._max_pool(h_conv2)
-
-        h_flat = tf.reshape(h_pool2, [-1, 49*61*64])
-
-        h_fully_connected = tf.nn.relu(tf.matmul(h_flat, self.fc_w) + self.fc_b)
-        h_dropout = tf.nn.dropout(h_fully_connected, CONST.keep_prob)
-
-        self.pred = tf.matmul(h_dropout, self.out_w) + self.out_b
-
-        tr_entropy = tf.nn.sigmoid_cross_entropy_with_logits(self.pred, self.label_batch)
-        self.loss = tf.reduce_mean(tr_entropy)
-        self.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(self.loss)
-
-        ev_correct_prediction = tf.equal(tf.argmax(self.pred, 1), tf.argmax(self.label_batch, 1))
-        self.accuracy = tf.reduce_mean(tf.cast(ev_correct_prediction, tf.float32))
 
     def run(self):
         """
@@ -108,6 +69,47 @@ class CNN(object):
         cls.labels = tf.reshape(ts_label_decoded, [1])
 
     @classmethod
+    def _build_batch(cls):
+        """
+        building mini batches
+        """
+        cls.image_batch, cls.label_batch = tf.train.shuffle_batch(
+            tensors=[cls.images, cls.labels],
+            batch_size=CONST.batch_size,
+            num_threads=CONST.num_threads,
+            capacity=CONST.capacity,
+            min_after_dequeue=CONST.min_after_dequeue)
+
+    @classmethod
+    def _build_graph(cls):
+        """
+        building graph
+        """
+        cls._set_variables()
+
+        x_image = tf.reshape(cls.image_batch, [-1, CONST.image_width, CONST.image_height, 1])
+
+        h_conv1 = tf.nn.relu(cls._conv(x_image, cls.hidden1_w) + cls.hidden1_b)
+        h_pool1 = cls._max_pool(h_conv1)
+
+        h_conv2 = tf.nn.relu(cls._conv(h_pool1, cls.hidden2_w) + cls.hidden2_b)
+        h_pool2 = cls._max_pool(h_conv2)
+
+        h_flat = tf.reshape(h_pool2, [-1, 49*61*64])
+
+        h_fully_connected = tf.nn.relu(tf.matmul(h_flat, cls.fc_w) + cls.fc_b)
+        h_dropout = tf.nn.dropout(h_fully_connected, CONST.keep_prob)
+
+        cls.pred = tf.matmul(h_dropout, cls.out_w) + cls.out_b
+
+        tr_entropy = tf.nn.sigmoid_cross_entropy_with_logits(cls.pred, cls.label_batch)
+        cls.loss = tf.reduce_mean(tr_entropy)
+        cls.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(cls.loss)
+
+        ev_correct_prediction = tf.equal(tf.argmax(cls.pred, 1), tf.argmax(cls.label_batch, 1))
+        cls.accuracy = tf.reduce_mean(tf.cast(ev_correct_prediction, tf.float32))
+
+    @classmethod
     def _conv(cls, tensor1, tensor2):
         return tf.nn.conv2d(tensor1, tensor2, strides=[1, 1, 1, 1], padding="SAME")
 
@@ -129,19 +131,19 @@ class CNN(object):
         cls.out_w = tf.Variable(tf.truncated_normal([10, 1]))
         cls.out_b = tf.Variable(tf.zeros([1]))
 
+
 def main(_):
     '''
     main function starting here
     '''
-    image_list = os.listdir(CONST.image_dir)
+    # image_list = os.listdir(CONST.image_dir)
 
-    for i in xrange(len(image_list)):
-        image_list[i] = CONST.image_dir + image_list[i]
+    # for i in xrange(len(image_list)):
+    #     image_list[i] = CONST.image_dir + image_list[i]
 
-    label_list = [CONST.label_dir]
+    # label_list = [CONST.label_dir]
 
-    cnn = CNN(image_list, label_list)
-    cnn.run()
-
+    # cnn = CNN(image_list, label_list)
+    # cnn.run()
 if __name__ == "__main__":
     tf.app.run()
