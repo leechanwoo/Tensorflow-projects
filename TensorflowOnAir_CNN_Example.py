@@ -1,6 +1,7 @@
-import tensorflow as tf
+
 import os
-from PIL import Image
+#from PIL import Image
+import tensorflow as tf
 
 image_dir = "../Temp_data_Set/Test_Dataset_png/"
 image_width = 61
