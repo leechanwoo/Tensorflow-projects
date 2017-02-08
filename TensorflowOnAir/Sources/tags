@@ -9,13 +9,17 @@ CNN_Example.py	CNN_Example.py	1;"	kind:file	line:1
 CNN_Example_optimized.py	CNN_Example_optimized.py	1;"	kind:file	line:1
 CONST	CNN_Example_optimized.py	/^CONST = CONST.FLAGS$/;"	kind:variable	line:17
 CONST	CNN_Example_optimized.py	/^CONST = tf.app.flags$/;"	kind:variable	line:5
-__init__	CNN_Example_optimized.py	/^    def __init__(self, image_name_list, label_name_list):$/;"	kind:member	line:24
-_conv	CNN_Example_optimized.py	/^    def _conv(cls, tensor1, tensor2):$/;"	kind:member	line:112
-_max_pool	CNN_Example_optimized.py	/^    def _max_pool(cls, tensor):$/;"	kind:member	line:116
-_set_variables	CNN_Example_optimized.py	/^    def _set_variables(cls):$/;"	kind:member	line:120
+__init__	CNN_Example_optimized.py	/^    def __init__(self, image_name_list=None, label_name_list=None):$/;"	kind:member	line:24
+_build_batch	CNN_Example_optimized.py	/^    def _build_batch(cls):$/;"	kind:member	line:101
+_build_graph	CNN_Example_optimized.py	/^    def _build_graph(cls):$/;"	kind:member	line:113
+_close_session	CNN_Example_optimized.py	/^    def _close_session(cls):$/;"	kind:member	line:70
+_conv	CNN_Example_optimized.py	/^    def _conv(cls, tensor1, tensor2):$/;"	kind:member	line:142
+_initialize	CNN_Example_optimized.py	/^    def _initialize(cls):$/;"	kind:member	line:60
+_load_csv	CNN_Example_optimized.py	/^    def _load_csv(cls, filename_list):$/;"	kind:member	line:90
+_load_png	CNN_Example_optimized.py	/^    def _load_png(cls, filename_list):$/;"	kind:member	line:79
+_max_pool	CNN_Example_optimized.py	/^    def _max_pool(cls, tensor):$/;"	kind:member	line:146
+_set_variables	CNN_Example_optimized.py	/^    def _set_variables(cls):$/;"	kind:member	line:150
 accuracy	CNN_Example.py	/^accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))$/;"	kind:variable	line:68
-build_batch	CNN_Example_optimized.py	/^    def build_batch(self):$/;"	kind:member	line:32
-build_graph	CNN_Example_optimized.py	/^    def build_graph(self):$/;"	kind:member	line:43
 coord	CNN_Example.py	/^    coord = tf.train.Coordinator()$/;"	kind:variable	line:71
 correct_prediction	CNN_Example.py	/^correct_prediction = tf.equal(tf.argmax(pred,1), tf.argmax(y_,1))$/;"	kind:variable	line:67
 drop_fc	CNN_Example.py	/^drop_fc = tf.nn.dropout(h_fc1, 0.7)$/;"	kind:variable	line:60
@@ -45,14 +49,13 @@ label_dir	CNN_Example.py	/^label_dir = "..\/Temp_data_Set\/Test_Dataset_csv\/Lab
 label_list	CNN_Example.py	/^label_list = [label_dir]$/;"	kind:variable	line:16
 label_reader	CNN_Example.py	/^label_reader = tf.TextLineReader()$/;"	kind:variable	line:22
 labelname_queue	CNN_Example.py	/^labelname_queue = tf.train.string_input_producer(label_list)$/;"	kind:variable	line:19
-load_csv	CNN_Example_optimized.py	/^    def load_csv(cls, filename_list):$/;"	kind:member	line:101
-load_png	CNN_Example_optimized.py	/^    def load_png(cls, filename_list):$/;"	kind:member	line:90
 loss	CNN_Example.py	/^loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(pred, y_))$/;"	kind:variable	line:64
-main	CNN_Example_optimized.py	/^def main(_):$/;"	kind:function	line:133
+main	CNN_Example_optimized.py	/^def main(_):$/;"	kind:function	line:164
 out_b	CNN_Example.py	/^out_b = tf.Variable(tf.zeros([1]))$/;"	kind:variable	line:46
 out_w	CNN_Example.py	/^out_w = tf.Variable(tf.truncated_normal([10, 1]))$/;"	kind:variable	line:45
 pred	CNN_Example.py	/^pred = tf.matmul(drop_fc, out_w) + out_b$/;"	kind:variable	line:62
-run	CNN_Example_optimized.py	/^    def run(self):$/;"	kind:member	line:71
+run	CNN_Example_optimized.py	/^    def run(self):$/;"	kind:member	line:48
 thread	CNN_Example.py	/^    thread = tf.train.start_queue_runners(sess=sess, coord=coord)$/;"	kind:variable	line:72
+tprint	CNN_Example_optimized.py	/^    def tprint(self, tensor):$/;"	kind:member	line:42
 train	CNN_Example.py	/^train = tf.train.AdamOptimizer(1e-4).minimize(loss)$/;"	kind:variable	line:65
 x_image	CNN_Example.py	/^x_image = tf.reshape(x, [-1, image_width, image_height, 1])$/;"	kind:variable	line:49
