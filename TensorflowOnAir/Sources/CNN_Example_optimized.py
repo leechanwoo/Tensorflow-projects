@@ -3,8 +3,8 @@ import os
 import tensorflow as tf
 
 CONST = tf.app.flags
-CONST.DEFINE_string("image_dir", "/DataSet/image_png/", "image directory")
-CONST.DEFINE_string("label_dir", "/DataSet/label_csv/Label.csv", "label directory")
+CONST.DEFINE_string("image_dir", "DataSet/image_png/", "image directory")
+CONST.DEFINE_string("label_dir", "DataSet/label_csv/Label.csv", "label directory")
 CONST.DEFINE_integer("image_width", 61, "image width")
 CONST.DEFINE_integer("image_height", 49, "image height")
 CONST.DEFINE_float("keep_prob", 0.7, "keep probability for dropout")
@@ -166,11 +166,7 @@ def main(_):
     '''
     main function starting here
     '''
-    image_list = os.listdir(CONST.image_dir)
-
-    for i in xrange(len(image_list)):
-        image_list[i] = CONST.image_dir + image_list[i]
-
+    image_list = [CONST.image_dir+filename for filename in os.listdir(CONST.image_dir)]
     label_list = [CONST.label_dir]
 
     cnn = CNN(image_list, label_list)
