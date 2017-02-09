@@ -24,10 +24,12 @@ class RNN(object):
         """
          * run the rnn model
         """
-        for step in xrange(CONST.epoch):
-            loss = self._run()
-            if step % 100 == 0:
-                print loss
+        # for step in xrange(CONST.epoch):
+        #     loss = self._run()
+        #     if step % 100 == 0:
+        #         print loss
+        self._line_plot_draw()
+
         print "training done"
         self._close_session()
 
@@ -53,7 +55,8 @@ class RNN(object):
     def _gen_sim_data(cls):
         ts_x = tf.constant(range(CONST.samples+1), dtype=tf.float32)
         ts_y = tf.sin(ts_x*0.1)
-        
+        cls._line_plot("sin_x", ts_y, CONST.samples+1)
+
         sz_batch = (CONST.samples/CONST.state_size, CONST.state_size, CONST.input_vector_size)
         cls.ts_batch_y = tf.reshape(ts_y[:-1], sz_batch)
         cls.ts_batch_y_ = tf.reshape(ts_y[1:], sz_batch)
@@ -92,14 +95,19 @@ class RNN(object):
         return tf.reduce_mean(tf.pow(batch - label, 2))
 
     @classmethod
-    def _line_plot(cls, tensor, length):
-        
-        pass
-    
+    def _line_plot(cls, name, tensor, length):
+        cls.idx = tf.placeholder(tf.int32)
+        cls.plot = tensor[cls.idx]
+        tf.summary.scalar(name, cls.plot)
+
     @classmethod
     def _line_plot_draw(cls):
-        
-        pass
+        summaries = tf.summary.merge_all()
+        writer = tf.summary.FileWriter("./tensorboard")
+        summary_str = cls.sess.run(summaries)
+        writer.add_summary(summary_str)
+        writer.flush()
+        writer.close()
 
 def main(_):
     """
