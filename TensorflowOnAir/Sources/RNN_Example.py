@@ -1,11 +1,14 @@
 
+
 import tensorflow as tf
 
 CONST = tf.app.flags
-CONST.DEFINE_integer("epoch", 100, "epoch when learning")
+CONST.DEFINE_integer("epoch", 1000, "epoch when learning")
 CONST.DEFINE_integer("samples", 1000, "number of samples for learning")
 CONST.DEFINE_integer("state_size", 5, "state size in rnn ")
 CONST.DEFINE_integer("recurrent", 5, "number of recurrent hidden layer")
+CONST.DEFINE_integer("input_vector_size", 1, "input vector size")
+CONST.DEFINE_float("learning_rate", 0.001, "learning rate for optimizer")
 CONST = CONST.FLAGS
 
 class RNN(object):
@@ -23,26 +26,26 @@ class RNN(object):
         """
          * run the rnn model
         """
-        self._run()
+        for step in xrange(CONST.epoch):
+            loss = self._run()
+            if step % 100 == 0:
+                print loss
+        print "training done"
+        self._close_session()
 
     @classmethod
     def _run(cls):
         """
          * run the rnn model
         """
-        for step in xrange(CONST.epoch):
-            _, _loss = cls.sess.run([cls.train, cls.loss])
-            if step % 100 == 0:
-                print _loss
-
-        print "process done"
-        cls._close_session()
+        _, loss = cls.sess.run([cls.train, cls.loss])
+        return loss
 
     @classmethod
     def _gen_sim_data(cls):
         ts_x = tf.constant(range(CONST.samples+1), dtype=tf.float32)
         ts_y = tf.sin(ts_x*0.1)
-        sz_batch = (CONST.samples/CONST.state_size, CONST.state_size, 1)
+        sz_batch = (CONST.samples/CONST.state_size, CONST.state_size, CONST.input_vector_size)
         cls.ts_batch_y = tf.reshape(ts_y[:-1], sz_batch)
         cls.ts_batch_y_ = tf.reshape(ts_y[1:], sz_batch)
 
