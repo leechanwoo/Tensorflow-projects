@@ -81,9 +81,13 @@ class RNN(object):
 
         cls.loss = 0
         for i in xrange(CONST.state_size):
-            cls.loss += tf.reduce_mean(tf.pow(cls.pred[i] - cls.batch_label[i], 2))
+            cls.loss += cls._mean_square_error(cls.pred[i], cls.batch_label[i])
 
         cls.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(cls.loss)
+
+    @classmethod
+    def _mean_square_error(cls, batch, label):
+        return tf.reduce_mean(tf.pow(batch - label, 2))
 
     @classmethod
     def _set_variables(cls):
