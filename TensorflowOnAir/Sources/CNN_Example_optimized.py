@@ -83,7 +83,7 @@ class CNN(object):
         """
         for _ in range(CONST.epoch):
             self.sess.run(self.train)
-            self.tprint("loss, accuracy: ", [self.loss, self.accuracy])
+            self.tprint("loss, accuracy: ", [self.out_w])
 
         self._close_session()
 
@@ -172,49 +172,49 @@ class CNN(object):
             capacity=CONST.capacity,
             min_after_dequeue=CONST.min_after_dequeue)
 
-    @classmethod
-    def _set_variables(cls):
+    #@classmethod
+    def _set_variables(self):
         """
         * CNN에 사용될 웨이트 파라메터들입니다.
         """
-        cls.hidden1_w = tf.Variable(tf.truncated_normal([5, 5, 1, 32]))
-        cls.hidden1_b = tf.Variable(tf.zeros([32]))
+        self.hidden1_w = tf.Variable(tf.truncated_normal([5, 5, 1, 32]))
+        self.hidden1_b = tf.Variable(tf.zeros([32]))
 
-        cls.hidden2_w = tf.Variable(tf.truncated_normal([5, 5, 32, 64]))
-        cls.hidden2_b = tf.Variable(tf.truncated_normal([64]))
+        self.hidden2_w = tf.Variable(tf.truncated_normal([5, 5, 32, 64]))
+        self.hidden2_b = tf.Variable(tf.truncated_normal([64]))
 
-        cls.fc_w = tf.Variable(tf.truncated_normal([49*61*64, 10]))
-        cls.fc_b = tf.Variable(tf.zeros([10]))
+        self.fc_w = tf.Variable(tf.truncated_normal([49*61*64, 10]))
+        self.fc_b = tf.Variable(tf.zeros([10]))
 
-        cls.out_w = tf.Variable(tf.truncated_normal([10, 1]))
-        cls.out_b = tf.Variable(tf.zeros([1]))
+        self.out_w = tf.Variable(tf.truncated_normal([10, 1]))
+        self.out_b = tf.Variable(tf.zeros([1]))
 
-    @classmethod
-    def _build_graph(cls):
+    #@classmethod
+    def _build_graph(self):
         """
         * CNN모델을 graph로 구축합니다
         """
-        x_image = tf.reshape(cls.image_batch, [-1, CONST.image_width, CONST.image_height, 1])
+        x_image = tf.reshape(self.image_batch, [-1, CONST.image_width, CONST.image_height, 1])
 
-        h_conv1 = tf.nn.relu(cls._conv(x_image, cls.hidden1_w) + cls.hidden1_b)
-        h_pool1 = cls._max_pool(h_conv1)
+        h_conv1 = tf.nn.relu(self._conv(x_image, self.hidden1_w) + self.hidden1_b)
+        h_pool1 = self._max_pool(h_conv1)
 
-        h_conv2 = tf.nn.relu(cls._conv(h_pool1, cls.hidden2_w) + cls.hidden2_b)
-        h_pool2 = cls._max_pool(h_conv2)
+        h_conv2 = tf.nn.relu(self._conv(h_pool1, self.hidden2_w) + self.hidden2_b)
+        h_pool2 = self._max_pool(h_conv2)
 
         h_flat = tf.reshape(h_pool2, [-1, 49*61*64])
 
-        h_fully_connected = tf.nn.relu(tf.matmul(h_flat, cls.fc_w) + cls.fc_b)
+        h_fully_connected = tf.nn.relu(tf.matmul(h_flat, self.fc_w) + self.fc_b)
         h_dropout = tf.nn.dropout(h_fully_connected, CONST.keep_prob)
 
-        cls.pred = tf.nn.sigmoid(tf.matmul(h_dropout, cls.out_w) + cls.out_b)
+        self.pred = tf.nn.sigmoid(tf.matmul(h_dropout, self.out_w) + self.out_b)
 
-        tr_entropy = tf.nn.sigmoid_cross_entropy_with_logits(cls.pred, cls.label_batch)
-        cls.loss = tf.reduce_mean(tr_entropy)
-        cls.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(cls.loss)
+        tr_entropy = tf.nn.sigmoid_cross_entropy_with_logits(self.pred, self.label_batch)
+        self.loss = tf.reduce_mean(tr_entropy)
+        self.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(self.loss)
 
-        cls.ev_correct_prediction = tf.equal(cls.pred, cls.label_batch)
-        cls.accuracy = tf.reduce_mean(tf.cast(cls.ev_correct_prediction, tf.float32))
+        self.ev_correct_prediction = tf.equal(self.pred, self.label_batch)
+        self.accuracy = tf.reduce_mean(tf.cast(self.ev_correct_prediction, tf.float32))
 
     @classmethod
     def _conv(cls, tensor1, tensor2):
