@@ -1,3 +1,4 @@
+
 import tensorflow as tf
 
 CONST = tf.app.flags
@@ -96,6 +97,7 @@ class RNN(object):
 
     @classmethod
     def _line_plot(cls, name, tensor, length):
+        cls.length = length
         cls.idx = tf.placeholder(tf.int32)
         cls.plot = tensor[cls.idx]
         tf.summary.scalar(name, cls.plot)
@@ -104,9 +106,10 @@ class RNN(object):
     def _line_plot_draw(cls):
         summaries = tf.summary.merge_all()
         writer = tf.summary.FileWriter("./tensorboard")
-        summary_str = cls.sess.run(summaries)
-        writer.add_summary(summary_str)
-        writer.flush()
+        for i in xrange(cls.length):
+            summary_str = cls.sess.run(summaries, {cls.idx: i})
+            writer.add_summary(summary_str, i)
+            writer.flush()
         writer.close()
 
 def main(_):
