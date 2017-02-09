@@ -131,11 +131,8 @@ def main(_):
     '''
     main function starting here
     '''
-    image_list = os.listdir(CONST.image_dir)
-
-    for i in xrange(len(image_list)):
-        image_list[i] = CONST.image_dir + image_list[i]
-
+    image_list = [CONST.image_dir + filename for filename in os.listdir(CONST.image_dir)]
+    image_list.sort()
     label_list = [CONST.label_dir]
 
     cnn = CNN(image_list, label_list)
