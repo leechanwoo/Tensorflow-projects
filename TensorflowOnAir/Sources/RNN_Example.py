@@ -34,9 +34,6 @@ class RNN(object):
 
     @classmethod
     def _run(cls):
-        """
-         * run the rnn model
-        """
         _, loss = cls.sess.run([cls.train, cls.loss])
         return loss
 
