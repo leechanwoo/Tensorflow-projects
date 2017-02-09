@@ -1,5 +1,4 @@
 
-
 import tensorflow as tf
 
 CONST = tf.app.flags
@@ -42,6 +41,19 @@ class RNN(object):
         return loss
 
     @classmethod
+    def _initialize(cls):
+        cls.sess = tf.Session()
+        cls.sess.run(tf.global_variables_initializer())
+        cls.coord = tf.train.Coordinator()
+        cls.thread = tf.train.start_queue_runners(cls.sess, cls.coord)
+
+    @classmethod
+    def _close_session(cls):
+        cls.coord.request_stop()
+        cls.coord.join(cls.thread)
+        cls.sess.close()
+
+    @classmethod
     def _gen_sim_data(cls):
         ts_x = tf.constant(range(CONST.samples+1), dtype=tf.float32)
         ts_y = tf.sin(ts_x*0.1)
@@ -57,19 +69,12 @@ class RNN(object):
             enqueue_many=True)
 
     @classmethod
-    def _initialize(cls):
-        cls.sess = tf.Session()
-        cls.sess.run(tf.global_variables_initializer())
-        cls.coord = tf.train.Coordinator()
-        cls.thread = tf.train.start_queue_runners(cls.sess, cls.coord)
+    def _set_variables(cls):
+        cls.linear_w = tf.Variable(tf.truncated_normal([CONST.recurrent, CONST.state_size, 1]))
+        cls.linear_b = tf.Variable(tf.zeros([CONST.state_size, 1, 1]))
 
-
-    @classmethod
-    def _close_session(cls):
-        cls.coord.request_stop()
-        cls.coord.join(cls.thread)
-        cls.sess.close()
-
+        cls.linear_w = tf.unpack(cls.linear_w)
+        cls.linear_b = tf.unpack(cls.linear_b)
 
     @classmethod
     def _build_graph(cls):
@@ -89,21 +94,12 @@ class RNN(object):
     def _mean_square_error(cls, batch, label):
         return tf.reduce_mean(tf.pow(batch - label, 2))
 
-    @classmethod
-    def _set_variables(cls):
-        cls.linear_w = tf.Variable(tf.truncated_normal([CONST.recurrent, CONST.state_size, 1]))
-        cls.linear_b = tf.Variable(tf.zeros([CONST.state_size, 1, 1]))
-
-        cls.linear_w = tf.unpack(cls.linear_w)
-        cls.linear_b = tf.unpack(cls.linear_b)
-
 def main(_):
     """
     * code start here
     """
     rnn = RNN()
     rnn.run()
-
 
 if __name__ == "__main__":
     tf.app.run()
