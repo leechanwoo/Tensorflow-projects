@@ -1,6 +1,13 @@
 
 import tensorflow as tf
 
+CONST = tf.app.flags
+CONST.DEFINE_integer("epoch", 100, "epoch when learning")
+CONST.DEFINE_integer("samples", 1000, "number of samples for learning")
+CONST.DEFINE_integer("state_size", 5, "state size in rnn ")
+CONST.DEFINE_integer("recurrent", 5, "number of recurrent hidden layer")
+CONST = CONST.FLAGS
+
 class RNN(object):
     """
      * RNN model
@@ -23,7 +30,7 @@ class RNN(object):
         """
          * run the rnn model
         """
-        for step in xrange(1000):
+        for step in xrange(CONST.epoch):
             _, _loss = cls.sess.run([cls.train, cls.loss])
             if step % 100 == 0:
                 print _loss
@@ -33,10 +40,11 @@ class RNN(object):
 
     @classmethod
     def _gen_sim_data(cls):
-        ts_x = tf.constant(range(0, 1001, 1), dtype=tf.float32)
+        ts_x = tf.constant(range(CONST.samples+1), dtype=tf.float32)
         ts_y = tf.sin(ts_x*0.1)
-        cls.ts_batch_y = tf.reshape(ts_y[:-1], [200, 5, 1])
-        cls.ts_batch_y_ = tf.reshape(ts_y[1:], [200, 5, 1])
+        sz_batch = (CONST.samples/CONST.state_size, CONST.state_size, 1)
+        cls.ts_batch_y = tf.reshape(ts_y[:-1], sz_batch)
+        cls.ts_batch_y_ = tf.reshape(ts_y[1:], sz_batch)
 
     @classmethod
     def _build_batch(cls):
@@ -62,22 +70,25 @@ class RNN(object):
 
     @classmethod
     def _build_graph(cls):
-        rnn_cell = tf.nn.rnn_cell.BasicRNNCell(5)
+        rnn_cell = tf.nn.rnn_cell.BasicRNNCell(CONST.state_size)
         cls.input_set = tf.unpack(cls.batch_train, axis=1)
         cls.batch_label = tf.unpack(cls.batch_label, axis=1)
         cls.output, _ = tf.nn.rnn(rnn_cell, cls.input_set, dtype=tf.float32)
         cls.pred = tf.matmul(cls.output, cls.linear_w) + cls.linear_b
-        
+
         cls.loss = 0
-        for i in xrange(5):        
+        for i in xrange(CONST.state_size):
             cls.loss += tf.reduce_mean(tf.pow(cls.pred[i] - cls.batch_label[i], 2))
-        
-        cls.train = tf.train.AdamOptimizer(0.001).minimize(cls.loss)
+
+        cls.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(cls.loss)
 
     @classmethod
     def _set_variables(cls):
-        cls.linear_w = tf.unpack(tf.Variable(tf.truncated_normal([5, 5, 1])))
-        cls.linear_b = tf.unpack(tf.Variable(tf.zeros([5, 1, 1])))
+        cls.linear_w = tf.Variable(tf.truncated_normal([CONST.recurrent, CONST.state_size, 1]))
+        cls.linear_b = tf.Variable(tf.zeros([CONST.state_size, 1, 1]))
+
+        cls.linear_w = tf.unpack(cls.linear_w)
+        cls.linear_b = tf.unpack(cls.linear_b)
 
 def main(_):
     """
