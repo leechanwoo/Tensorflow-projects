@@ -48,7 +48,7 @@ class RNN(object):
                     print "loss: ", loss
             else:
                 self._run_pred(step)
-                self._line_plot_draw()
+        self._line_plot_draw()
 
         print "training done"
         self._close_session()
@@ -134,8 +134,8 @@ class RNN(object):
 
     @classmethod
     def _serialize_pred(cls):
-        cls.pred_sin = tf.reshape(cls.pred, (1000))
-        cls._line_plot("pred_sin", cls.pred_sin, 1000)
+        cls.pred_sin = tf.reshape(cls.pred, (100,))
+        cls._line_plot("pred_sin", cls.pred_sin, 100)
 
 
     @classmethod
