@@ -126,7 +126,6 @@ class RNN(object):
         cls.pred_sin = tf.reshape(cls.pred, (100,))
         cls._line_plot("pred_sin", cls.pred_sin, 100)
 
-
     @classmethod
     def _build_train(cls):
         cls.loss = 0
