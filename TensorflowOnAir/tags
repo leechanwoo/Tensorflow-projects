@@ -4,41 +4,165 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-TensorflowOnAir_CNN_Example.py	TensorflowOnAir_CNN_Example.py	1;"	kind:file	line:1
-accuracy	TensorflowOnAir_CNN_Example.py	/^accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))$/;"	kind:variable	line:68
-coord	TensorflowOnAir_CNN_Example.py	/^    coord = tf.train.Coordinator()$/;"	kind:variable	line:71
-correct_prediction	TensorflowOnAir_CNN_Example.py	/^correct_prediction = tf.equal(tf.argmax(pred,1), tf.argmax(y_,1))$/;"	kind:variable	line:67
-drop_fc	TensorflowOnAir_CNN_Example.py	/^drop_fc = tf.nn.dropout(h_fc1, 0.7)$/;"	kind:variable	line:60
-fc_b	TensorflowOnAir_CNN_Example.py	/^fc_b = tf.Variable(tf.zeros([10]))$/;"	kind:variable	line:43
-fc_w	TensorflowOnAir_CNN_Example.py	/^fc_w = tf.Variable(tf.truncated_normal([49*61*64, 10]))$/;"	kind:variable	line:42
-h_conv1	TensorflowOnAir_CNN_Example.py	/^h_conv1 = tf.nn.relu(tf.nn.conv2d(x_image, hidden1_w, strides=[1, 1, 1, 1], padding="SAME") + hidden1_b)$/;"	kind:variable	line:51
-h_conv2	TensorflowOnAir_CNN_Example.py	/^h_conv2 = tf.nn.relu(tf.nn.conv2d(h_pool1, hidden2_w, strides=[1, 1, 1, 1], padding="SAME") + hidden2_b)$/;"	kind:variable	line:54
-h_fc1	TensorflowOnAir_CNN_Example.py	/^h_fc1 = tf.nn.relu(tf.matmul(h_flat, fc_w) + fc_b)$/;"	kind:variable	line:58
-h_flat	TensorflowOnAir_CNN_Example.py	/^h_flat = tf.reshape(h_pool2, [-1, 49*61*64])$/;"	kind:variable	line:57
-h_pool1	TensorflowOnAir_CNN_Example.py	/^h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1, 2, 2, 1], strides=[1, 1, 1, 1], padding='SAME')$/;"	kind:variable	line:52
-h_pool2	TensorflowOnAir_CNN_Example.py	/^h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1, 2, 2, 1], strides=[1, 1, 1, 1], padding='SAME')$/;"	kind:variable	line:55
-hidden1_b	TensorflowOnAir_CNN_Example.py	/^hidden1_b = tf.Variable(tf.zeros([32]))$/;"	kind:variable	line:37
-hidden1_w	TensorflowOnAir_CNN_Example.py	/^hidden1_w = tf.Variable(tf.truncated_normal([5,5,1,32]))$/;"	kind:variable	line:36
-hidden2_b	TensorflowOnAir_CNN_Example.py	/^hidden2_b = tf.Variable(tf.truncated_normal([64]))$/;"	kind:variable	line:40
-hidden2_w	TensorflowOnAir_CNN_Example.py	/^hidden2_w = tf.Variable(tf.truncated_normal([5,5,32,64]))$/;"	kind:variable	line:39
-image	TensorflowOnAir_CNN_Example.py	/^image = tf.reshape(image_decoded, [image_width, image_height, 1])$/;"	kind:variable	line:31
-image_decoded	TensorflowOnAir_CNN_Example.py	/^image_decoded = tf.cast(tf.image.decode_png(image_value), tf.float32)$/;"	kind:variable	line:27
-image_dir	TensorflowOnAir_CNN_Example.py	/^image_dir = "..\/Temp_data_Set\/Test_Dataset_png\/"$/;"	kind:variable	line:6
-image_height	TensorflowOnAir_CNN_Example.py	/^image_height = 49$/;"	kind:variable	line:8
-image_list	TensorflowOnAir_CNN_Example.py	/^image_list = os.listdir(image_dir)$/;"	kind:variable	line:10
-image_reader	TensorflowOnAir_CNN_Example.py	/^image_reader = tf.WholeFileReader()$/;"	kind:variable	line:21
-image_width	TensorflowOnAir_CNN_Example.py	/^image_width = 61$/;"	kind:variable	line:7
-imagename_queue	TensorflowOnAir_CNN_Example.py	/^imagename_queue = tf.train.string_input_producer(image_list)$/;"	kind:variable	line:18
-label	TensorflowOnAir_CNN_Example.py	/^label = tf.reshape(label_decoded, [1])$/;"	kind:variable	line:30
-label_decoded	TensorflowOnAir_CNN_Example.py	/^label_decoded = tf.cast(tf.decode_csv(label_value, record_defaults=[[0]]), tf.float32)$/;"	kind:variable	line:28
-label_dir	TensorflowOnAir_CNN_Example.py	/^label_dir = "..\/Temp_data_Set\/Test_Dataset_csv\/Label.csv"$/;"	kind:variable	line:15
-label_list	TensorflowOnAir_CNN_Example.py	/^label_list = [label_dir]$/;"	kind:variable	line:16
-label_reader	TensorflowOnAir_CNN_Example.py	/^label_reader = tf.TextLineReader()$/;"	kind:variable	line:22
-labelname_queue	TensorflowOnAir_CNN_Example.py	/^labelname_queue = tf.train.string_input_producer(label_list)$/;"	kind:variable	line:19
-loss	TensorflowOnAir_CNN_Example.py	/^loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(pred, y_))$/;"	kind:variable	line:64
-out_b	TensorflowOnAir_CNN_Example.py	/^out_b = tf.Variable(tf.zeros([1]))$/;"	kind:variable	line:46
-out_w	TensorflowOnAir_CNN_Example.py	/^out_w = tf.Variable(tf.truncated_normal([10, 1]))$/;"	kind:variable	line:45
-pred	TensorflowOnAir_CNN_Example.py	/^pred = tf.matmul(drop_fc, out_w) + out_b$/;"	kind:variable	line:62
-thread	TensorflowOnAir_CNN_Example.py	/^    thread = tf.train.start_queue_runners(sess=sess, coord=coord)$/;"	kind:variable	line:72
-train	TensorflowOnAir_CNN_Example.py	/^train = tf.train.AdamOptimizer(1e-4).minimize(loss)$/;"	kind:variable	line:65
-x_image	TensorflowOnAir_CNN_Example.py	/^x_image = tf.reshape(x, [-1, image_width, image_height, 1])$/;"	kind:variable	line:49
+CNN	NeuralNetExamples/CNN_Example_optimized.py	/^class CNN(object):$/;"	kind:class	line:40
+CNN_Example.py	NeuralNetExamples/CNN_Example.py	1;"	kind:file	line:1
+CNN_Example_optimized.py	NeuralNetExamples/CNN_Example_optimized.py	1;"	kind:file	line:1
+CONST	NeuralNetExamples/CNN_Example_optimized.py	/^CONST = CONST.FLAGS$/;"	kind:variable	line:37
+CONST	NeuralNetExamples/CNN_Example_optimized.py	/^CONST = tf.app.flags$/;"	kind:variable	line:25
+CONST	NeuralNetExamples/RNN_Example.py	/^CONST = CONST.FLAGS$/;"	kind:variable	line:11
+CONST	NeuralNetExamples/RNN_Example.py	/^CONST = tf.app.flags$/;"	kind:variable	line:4
+FLAGS	word2vec/word2vec_advenced.py	/^FLAGS = flags.FLAGS$/;"	kind:variable	line:86
+Options	word2vec/word2vec_advenced.py	/^class Options(object):$/;"	kind:class	line:89
+RNN	NeuralNetExamples/RNN_Example.py	/^class RNN(object):$/;"	kind:class	line:13
+RNN_Example.py	NeuralNetExamples/RNN_Example.py	1;"	kind:file	line:1
+Word2vec	word2vec/word2vec_advenced.py	/^class Word2vec(object):$/;"	kind:class	line:151
+__init__	NeuralNetExamples/CNN_Example_optimized.py	/^    def __init__(self, image_name_list=None, label_name_list=None):$/;"	kind:member	line:51
+__init__	NeuralNetExamples/RNN_Example.py	/^    def __init__(self):$/;"	kind:member	line:17
+__init__	word2vec/word2vec_advenced.py	/^    def __init__(self):$/;"	kind:member	line:92
+__init__	word2vec/word2vec_advenced.py	/^    def __init__(self, options, session):$/;"	kind:member	line:154
+_build_batch	NeuralNetExamples/CNN_Example_optimized.py	/^    def _build_batch(cls):$/;"	kind:member	line:156
+_build_batch	NeuralNetExamples/RNN_Example.py	/^    def _build_batch(cls):$/;"	kind:member	line:66
+_build_graph	NeuralNetExamples/CNN_Example_optimized.py	/^    def _build_graph(self):$/;"	kind:member	line:193
+_build_graph	NeuralNetExamples/RNN_Example.py	/^    def _build_graph(cls):$/;"	kind:member	line:81
+_close_session	NeuralNetExamples/CNN_Example_optimized.py	/^    def _close_session(cls):$/;"	kind:member	line:118
+_close_session	NeuralNetExamples/RNN_Example.py	/^    def _close_session(cls):$/;"	kind:member	line:50
+_conv	NeuralNetExamples/CNN_Example_optimized.py	/^    def _conv(cls, tensor1, tensor2):$/;"	kind:member	line:220
+_gen_sim_data	NeuralNetExamples/RNN_Example.py	/^    def _gen_sim_data(cls):$/;"	kind:member	line:56
+_initialize	NeuralNetExamples/CNN_Example_optimized.py	/^    def _initialize(cls):$/;"	kind:member	line:108
+_initialize	NeuralNetExamples/RNN_Example.py	/^    def _initialize(cls):$/;"	kind:member	line:43
+_line_plot	NeuralNetExamples/RNN_Example.py	/^    def _line_plot(cls, name, tensor, length):$/;"	kind:member	line:99
+_line_plot_draw	NeuralNetExamples/RNN_Example.py	/^    def _line_plot_draw(cls):$/;"	kind:member	line:106
+_load_csv	NeuralNetExamples/CNN_Example_optimized.py	/^    def _load_csv(cls, filename_list):$/;"	kind:member	line:143
+_load_png	NeuralNetExamples/CNN_Example_optimized.py	/^    def _load_png(cls, filename_list):$/;"	kind:member	line:128
+_max_pool	NeuralNetExamples/CNN_Example_optimized.py	/^    def _max_pool(cls, tensor):$/;"	kind:member	line:224
+_mean_square_error	NeuralNetExamples/RNN_Example.py	/^    def _mean_square_error(cls, batch, label):$/;"	kind:member	line:95
+_predict	word2vec/word2vec_advenced.py	/^    def _predict(self, analogy):$/;"	kind:member	line:454
+_run	NeuralNetExamples/RNN_Example.py	/^    def _run(cls):$/;"	kind:member	line:38
+_set_variables	NeuralNetExamples/CNN_Example_optimized.py	/^    def _set_variables(self):$/;"	kind:member	line:176
+_set_variables	NeuralNetExamples/RNN_Example.py	/^    def _set_variables(cls):$/;"	kind:member	line:73
+_start_shell	word2vec/word2vec_advenced.py	/^def _start_shell(local_ns=None):$/;"	kind:function	line:526
+_train_thread_body	word2vec/word2vec_advenced.py	/^    def _train_thread_body(self):$/;"	kind:member	line:392
+access_token	crawling/facebook_crawling.py	/^   access_token = app_id + "|" + app_secret$/;"	kind:variable	line:103
+accuracy	NeuralNetExamples/CNN_Example.py	/^accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))$/;"	kind:variable	line:68
+analogy	word2vec/word2vec_advenced.py	/^    def analogy(self, w0, w1, w2):$/;"	kind:member	line:503
+app_id	crawling/facebook_crawling.py	/^   app_id = "405325483132744"$/;"	kind:variable	line:100
+app_secret	crawling/facebook_crawling.py	/^   app_secret = "e1674998dffc6f32a750fa0c725be7c9"$/;"	kind:variable	line:101
+average_loss	word2vec/word2vec_basic.py	/^    average_loss = 0$/;"	kind:variable	line:172
+batch_print	word2vec/word2vec_basic.py	/^        batch_print = session.run([train_inputs], feed_dict=feed_dict)$/;"	kind:variable	line:179
+batch_size	word2vec/word2vec_basic.py	/^batch_size = 128$/;"	kind:variable	line:121
+biases	word2vec/word2vec_basic.py	/^                       biases=nce_biases,$/;"	kind:variable	line:149
+build_dataset	word2vec/word2vec_basic.py	/^def build_dataset(words):$/;"	kind:function	line:35
+build_eval_graph	word2vec/word2vec_advenced.py	/^    def build_eval_graph(self):$/;"	kind:member	line:291
+build_graph	word2vec/word2vec_advenced.py	/^    def build_graph(self):$/;"	kind:member	line:345
+close_word	word2vec/word2vec_basic.py	/^                    close_word = reverse_dictionary[nearest[k]]$/;"	kind:variable	line:198
+coord	NeuralNetExamples/CNN_Example.py	/^    coord = tf.train.Coordinator()$/;"	kind:variable	line:71
+correct_prediction	NeuralNetExamples/CNN_Example.py	/^correct_prediction = tf.equal(tf.argmax(pred,1), tf.argmax(y_,1))$/;"	kind:variable	line:67
+data_index	word2vec/word2vec_basic.py	/^data_index=0$/;"	kind:variable	line:111
+drop_fc	NeuralNetExamples/CNN_Example.py	/^drop_fc = tf.nn.dropout(h_fc1, 0.7)$/;"	kind:variable	line:60
+embed	word2vec/word2vec_basic.py	/^        embed = tf.nn.embedding_lookup(embeddings, train_inputs)$/;"	kind:variable	line:140
+embedding_size	word2vec/word2vec_basic.py	/^embedding_size = 128$/;"	kind:variable	line:122
+embeddings	word2vec/word2vec_basic.py	/^        embeddings = tf.Variable($/;"	kind:variable	line:138
+eval	word2vec/word2vec_advenced.py	/^    def eval(self):$/;"	kind:member	line:463
+facebook_crawling.py	crawling/facebook_crawling.py	1;"	kind:file	line:1
+fc_b	NeuralNetExamples/CNN_Example.py	/^fc_b = tf.Variable(tf.zeros([10]))$/;"	kind:variable	line:43
+fc_w	NeuralNetExamples/CNN_Example.py	/^fc_w = tf.Variable(tf.truncated_normal([49*61*64, 10]))$/;"	kind:variable	line:42
+feed_dict	word2vec/word2vec_basic.py	/^        feed_dict = {train_inputs: batch_inputs, train_labels: batch_labels}$/;"	kind:variable	line:176
+filename	word2vec/word2vec_basic.py	/^filename = maybe_download('text8.zip', 31344016)$/;"	kind:variable	line:97
+final_embeddings	word2vec/word2vec_basic.py	/^    final_embeddings = normalized_embeddings.eval()$/;"	kind:variable	line:201
+flags	word2vec/word2vec_advenced.py	/^flags = tf.app.flags$/;"	kind:variable	line:19
+forward	word2vec/word2vec_advenced.py	/^    def forward(self, examples, labels):$/;"	kind:member	line:191
+generate_batch	word2vec/word2vec_basic.py	/^def generate_batch(data, batch_size, num_skips, skip_window):$/;"	kind:function	line:56
+getFacebookPageFeedData	crawling/facebook_crawling.py	/^def getFacebookPageFeedData(page_id, access_token, num_statuses):$/;"	kind:function	line:43
+graph	word2vec/word2vec_basic.py	/^graph = tf.Graph()$/;"	kind:variable	line:130
+h_conv1	NeuralNetExamples/CNN_Example.py	/^h_conv1 = tf.nn.relu(tf.nn.conv2d(x_image, hidden1_w, strides=[1, 1, 1, 1], padding="SAME") + hidden1_b)$/;"	kind:variable	line:51
+h_conv2	NeuralNetExamples/CNN_Example.py	/^h_conv2 = tf.nn.relu(tf.nn.conv2d(h_pool1, hidden2_w, strides=[1, 1, 1, 1], padding="SAME") + hidden2_b)$/;"	kind:variable	line:54
+h_fc1	NeuralNetExamples/CNN_Example.py	/^h_fc1 = tf.nn.relu(tf.matmul(h_flat, fc_w) + fc_b)$/;"	kind:variable	line:58
+h_flat	NeuralNetExamples/CNN_Example.py	/^h_flat = tf.reshape(h_pool2, [-1, 49*61*64])$/;"	kind:variable	line:57
+h_pool1	NeuralNetExamples/CNN_Example.py	/^h_pool1 = tf.nn.max_pool(h_conv1, ksize=[1, 2, 2, 1], strides=[1, 1, 1, 1], padding='SAME')$/;"	kind:variable	line:52
+h_pool2	NeuralNetExamples/CNN_Example.py	/^h_pool2 = tf.nn.max_pool(h_conv2, ksize=[1, 2, 2, 1], strides=[1, 1, 1, 1], padding='SAME')$/;"	kind:variable	line:55
+hidden1_b	NeuralNetExamples/CNN_Example.py	/^hidden1_b = tf.Variable(tf.zeros([32]))$/;"	kind:variable	line:37
+hidden1_w	NeuralNetExamples/CNN_Example.py	/^hidden1_w = tf.Variable(tf.truncated_normal([5,5,1,32]))$/;"	kind:variable	line:36
+hidden2_b	NeuralNetExamples/CNN_Example.py	/^hidden2_b = tf.Variable(tf.truncated_normal([64]))$/;"	kind:variable	line:40
+hidden2_w	NeuralNetExamples/CNN_Example.py	/^hidden2_w = tf.Variable(tf.truncated_normal([5,5,32,64]))$/;"	kind:variable	line:39
+image	NeuralNetExamples/CNN_Example.py	/^image = tf.reshape(image_decoded, [image_width, image_height, 1])$/;"	kind:variable	line:31
+image_decoded	NeuralNetExamples/CNN_Example.py	/^image_decoded = tf.cast(tf.image.decode_png(image_value), tf.float32)$/;"	kind:variable	line:27
+image_dir	NeuralNetExamples/CNN_Example.py	/^image_dir = "..\/Temp_data_Set\/Test_Dataset_png\/"$/;"	kind:variable	line:6
+image_height	NeuralNetExamples/CNN_Example.py	/^image_height = 49$/;"	kind:variable	line:8
+image_list	NeuralNetExamples/CNN_Example.py	/^image_list = os.listdir(image_dir)$/;"	kind:variable	line:10
+image_reader	NeuralNetExamples/CNN_Example.py	/^image_reader = tf.WholeFileReader()$/;"	kind:variable	line:21
+image_width	NeuralNetExamples/CNN_Example.py	/^image_width = 61$/;"	kind:variable	line:7
+imagename_queue	NeuralNetExamples/CNN_Example.py	/^imagename_queue = tf.train.string_input_producer(image_list)$/;"	kind:variable	line:18
+init	word2vec/word2vec_basic.py	/^    init = tf.global_variables_initializer()$/;"	kind:variable	line:164
+inputs	word2vec/word2vec_basic.py	/^                       inputs=embed,$/;"	kind:variable	line:151
+label	NeuralNetExamples/CNN_Example.py	/^label = tf.reshape(label_decoded, [1])$/;"	kind:variable	line:30
+label_decoded	NeuralNetExamples/CNN_Example.py	/^label_decoded = tf.cast(tf.decode_csv(label_value, record_defaults=[[0]]), tf.float32)$/;"	kind:variable	line:28
+label_dir	NeuralNetExamples/CNN_Example.py	/^label_dir = "..\/Temp_data_Set\/Test_Dataset_csv\/Label.csv"$/;"	kind:variable	line:15
+label_list	NeuralNetExamples/CNN_Example.py	/^label_list = [label_dir]$/;"	kind:variable	line:16
+label_reader	NeuralNetExamples/CNN_Example.py	/^label_reader = tf.TextLineReader()$/;"	kind:variable	line:22
+labelname_queue	NeuralNetExamples/CNN_Example.py	/^labelname_queue = tf.train.string_input_producer(label_list)$/;"	kind:variable	line:19
+labels	word2vec/word2vec_basic.py	/^                       labels=train_labels,$/;"	kind:variable	line:150
+labels	word2vec/word2vec_basic.py	/^    labels = [reverse_dictionary[i] for i in xrange(plot_only)]$/;"	kind:variable	line:210
+log_str	word2vec/word2vec_basic.py	/^                    log_str = "%s %s," % (log_str, close_word)$/;"	kind:variable	line:199
+log_str	word2vec/word2vec_basic.py	/^                log_str = "Nearest to %s:" % valid_word$/;"	kind:variable	line:196
+loss	NeuralNetExamples/CNN_Example.py	/^loss = tf.reduce_mean(tf.nn.sigmoid_cross_entropy_with_logits(pred, y_))$/;"	kind:variable	line:64
+loss	word2vec/word2vec_basic.py	/^    loss = tf.reduce_mean($/;"	kind:variable	line:147
+low_dim_embs	word2vec/word2vec_basic.py	/^    low_dim_embs = tsne.fit_transform(final_embeddings[:plot_only, :])$/;"	kind:variable	line:209
+main	NeuralNetExamples/CNN_Example_optimized.py	/^def main(_):$/;"	kind:function	line:227
+main	NeuralNetExamples/RNN_Example.py	/^def main(_):$/;"	kind:function	line:115
+main	word2vec/word2vec_advenced.py	/^def main(_):$/;"	kind:function	line:537
+maybe_download	word2vec/word2vec_basic.py	/^def maybe_download(filename, expected_bytes):$/;"	kind:function	line:18
+nce_biases	word2vec/word2vec_basic.py	/^        nce_biases = tf.Variable(tf.zeros([vocabulary_size]))$/;"	kind:variable	line:145
+nce_loss	word2vec/word2vec_advenced.py	/^    def nce_loss(self, true_logits, sampled_logits):$/;"	kind:member	line:257
+nce_weights	word2vec/word2vec_basic.py	/^        nce_weights = tf.Variable($/;"	kind:variable	line:142
+nearby	word2vec/word2vec_advenced.py	/^    def nearby(self, words, num=20):$/;"	kind:member	line:514
+nearest	word2vec/word2vec_basic.py	/^                nearest = (-sim[i, :]).argsort()[1:top_k+1]$/;"	kind:variable	line:195
+norm	word2vec/word2vec_basic.py	/^    norm = tf.sqrt(tf.reduce_sum(tf.square(embeddings), 1, keep_dims=True))$/;"	kind:variable	line:157
+normalized_embeddings	word2vec/word2vec_basic.py	/^    normalized_embeddings = embeddings \/ norm$/;"	kind:variable	line:158
+num_classes	word2vec/word2vec_basic.py	/^                       num_classes=vocabulary_size))$/;"	kind:variable	line:153
+num_sampled	word2vec/word2vec_basic.py	/^                       num_sampled=num_sampled,$/;"	kind:variable	line:152
+num_sampled	word2vec/word2vec_basic.py	/^num_sampled = 64$/;"	kind:variable	line:128
+num_skips	word2vec/word2vec_basic.py	/^num_skips = 2$/;"	kind:variable	line:124
+num_steps	word2vec/word2vec_basic.py	/^num_steps = 100001$/;"	kind:variable	line:166
+optimize	word2vec/word2vec_advenced.py	/^    def optimize(self, loss):$/;"	kind:member	line:274
+optimizer	word2vec/word2vec_basic.py	/^    optimizer = tf.train.GradientDescentOptimizer(1.0).minimize(loss)$/;"	kind:variable	line:155
+out_b	NeuralNetExamples/CNN_Example.py	/^out_b = tf.Variable(tf.zeros([1]))$/;"	kind:variable	line:46
+out_w	NeuralNetExamples/CNN_Example.py	/^out_w = tf.Variable(tf.truncated_normal([10, 1]))$/;"	kind:variable	line:45
+page_id	crawling/facebook_crawling.py	/^   page_id = 'nytimes'$/;"	kind:variable	line:105
+plot_only	word2vec/word2vec_basic.py	/^    plot_only = 500$/;"	kind:variable	line:208
+plot_with_labels	word2vec/word2vec_basic.py	/^def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):$/;"	kind:function	line:82
+pred	NeuralNetExamples/CNN_Example.py	/^pred = tf.matmul(drop_fc, out_w) + out_b$/;"	kind:variable	line:62
+processFacebookPageFeedStatus	crawling/facebook_crawling.py	/^def processFacebookPageFeedStatus(status):$/;"	kind:function	line:53
+read_analogies	word2vec/word2vec_advenced.py	/^    def read_analogies(self):$/;"	kind:member	line:164
+read_data	word2vec/word2vec_basic.py	/^def read_data(filename):$/;"	kind:function	line:30
+request_until_succeed	crawling/facebook_crawling.py	/^def request_until_succeed(url):$/;"	kind:function	line:16
+run	NeuralNetExamples/CNN_Example_optimized.py	/^    def run(self):$/;"	kind:member	line:73
+run	NeuralNetExamples/RNN_Example.py	/^    def run(self):$/;"	kind:member	line:24
+save_vocab	word2vec/word2vec_advenced.py	/^    def save_vocab(self):$/;"	kind:member	line:381
+scrapeFacebookPageFeedStatus	crawling/facebook_crawling.py	/^def scrapeFacebookPageFeedStatus(page_id, access_token):$/;"	kind:function	line:70
+sim	word2vec/word2vec_basic.py	/^            sim = similarity.eval()$/;"	kind:variable	line:191
+similarity	word2vec/word2vec_basic.py	/^    similarity = tf.matmul($/;"	kind:variable	line:161
+skip_window	word2vec/word2vec_basic.py	/^skip_window = 1$/;"	kind:variable	line:123
+stddev	word2vec/word2vec_basic.py	/^                                stddev=1.0\/math.sqrt(embedding_size)))$/;"	kind:variable	line:144
+testFacebookPageData	crawling/facebook_crawling.py	/^def testFacebookPageData(page_id, access_token):$/;"	kind:function	line:4
+testFacebookPageFeedData	crawling/facebook_crawling.py	/^def testFacebookPageFeedData(page_id, access_token):$/;"	kind:function	line:32
+thread	NeuralNetExamples/CNN_Example.py	/^    thread = tf.train.start_queue_runners(sess=sess, coord=coord)$/;"	kind:variable	line:72
+top_k	word2vec/word2vec_basic.py	/^                top_k = 8$/;"	kind:variable	line:194
+tprint	NeuralNetExamples/CNN_Example_optimized.py	/^    def tprint(self, message, tensors):$/;"	kind:member	line:90
+train	NeuralNetExamples/CNN_Example.py	/^train = tf.train.AdamOptimizer(1e-4).minimize(loss)$/;"	kind:variable	line:65
+train	word2vec/word2vec_advenced.py	/^    def train(self):$/;"	kind:member	line:400
+train_inputs	word2vec/word2vec_basic.py	/^    train_inputs = tf.placeholder(tf.int32, shape=[batch_size])$/;"	kind:variable	line:133
+train_labels	word2vec/word2vec_basic.py	/^    train_labels = tf.placeholder(tf.int32, shape=[batch_size, 1])$/;"	kind:variable	line:134
+tsne	word2vec/word2vec_basic.py	/^    tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)$/;"	kind:variable	line:207
+url	word2vec/word2vec_basic.py	/^url = 'http:\/\/mattmahoney.net\/dc\/'$/;"	kind:variable	line:16
+valid_dataset	word2vec/word2vec_basic.py	/^    valid_dataset = tf.constant(valid_examples, dtype=tf.int32)$/;"	kind:variable	line:135
+valid_embeddings	word2vec/word2vec_basic.py	/^    valid_embeddings = tf.nn.embedding_lookup($/;"	kind:variable	line:159
+valid_examples	word2vec/word2vec_basic.py	/^valid_examples = np.random.choice(valid_window, valid_size, replace=False)$/;"	kind:variable	line:127
+valid_size	word2vec/word2vec_basic.py	/^valid_size = 16$/;"	kind:variable	line:125
+valid_window	word2vec/word2vec_basic.py	/^valid_window = 100$/;"	kind:variable	line:126
+valid_word	word2vec/word2vec_basic.py	/^                valid_word = reverse_dictionary[valid_examples[i]]$/;"	kind:variable	line:193
+vocabulary_size	word2vec/word2vec_basic.py	/^vocabulary_size = 50000$/;"	kind:variable	line:102
+word2vec	word2vec/word2vec_advenced.py	/^word2vec = tf.load_op_library(os.path.join(os.path.dirname($/;"	kind:variable	line:16
+word2vec_advenced.py	word2vec/word2vec_advenced.py	1;"	kind:file	line:1
+word2vec_basic.py	word2vec/word2vec_basic.py	1;"	kind:file	line:1
+words	word2vec/word2vec_basic.py	/^words = read_data(filename)$/;"	kind:variable	line:98
+x_image	NeuralNetExamples/CNN_Example.py	/^x_image = tf.reshape(x, [-1, image_width, image_height, 1])$/;"	kind:variable	line:49

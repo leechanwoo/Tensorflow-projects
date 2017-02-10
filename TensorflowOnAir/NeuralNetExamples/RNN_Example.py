@@ -1,4 +1,5 @@
 
+import os
 import tensorflow as tf
 
 CONST = tf.app.flags
@@ -18,19 +19,24 @@ class RNN(object):
         self._gen_sim_data()
         self._build_batch()
         self._set_variables()
-        self._build_graph()
+        self._build_model()
+        self._save_model()
+        self._build_train()
         self._initialize()
+
 
     def run(self):
         """
          * run the rnn model
         """
-        # for step in xrange(CONST.epoch):
-        #     loss = self._run()
-        #     if step % 100 == 0:
-        #         print loss
-        self._line_plot_draw()
+        for step in xrange(CONST.epoch):
+            loss = self._run()
+            if step % 100 == 0:
+                self._write_checkpoint(os.getcwd() + "/checkpoint/rnn_learned_in_sine.ckpt")
+                print "model saved..."
+                print "loss: ", loss
 
+        #self._line_plot_draw()
         print "training done"
         self._close_session()
 
@@ -38,6 +44,14 @@ class RNN(object):
     def _run(cls):
         _, loss = cls.sess.run([cls.train, cls.loss])
         return loss
+
+    @classmethod
+    def _write_checkpoint(cls, directory):
+        cls.saver.save(cls.sess, directory)
+
+    @classmethod
+    def _save_model(cls):
+        cls.saver = tf.train.Saver()
 
     @classmethod
     def _initialize(cls):
@@ -77,14 +91,17 @@ class RNN(object):
         cls.linear_w = tf.unpack(cls.linear_w)
         cls.linear_b = tf.unpack(cls.linear_b)
 
+
     @classmethod
-    def _build_graph(cls):
+    def _build_model(cls):
         rnn_cell = tf.nn.rnn_cell.BasicRNNCell(CONST.state_size)
         cls.input_set = tf.unpack(cls.batch_train, axis=1)
         cls.batch_label = tf.unpack(cls.batch_label, axis=1)
         cls.output, _ = tf.nn.rnn(rnn_cell, cls.input_set, dtype=tf.float32)
         cls.pred = tf.matmul(cls.output, cls.linear_w) + cls.linear_b
 
+    @classmethod
+    def _build_train(cls):
         cls.loss = 0
         for i in xrange(CONST.state_size):
             cls.loss += cls._mean_square_error(cls.pred[i], cls.batch_label[i])
