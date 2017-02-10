@@ -19,18 +19,18 @@ class RNN(object):
      * RNN model
     """
     def __init__(self, train=True):
-        self.is_train = train
+        self._train_set(train)
         self._to_plot()
         self._gen_sim_data()
         self._build_batch()
         self._set_variables()
         self._build_model()
         self._save_model()
-        if self.is_train is True:
+        if train is True:
             self._build_train()
         else:
             pass
-        self._initialize(train)
+        self._initialize()
 
 
     def run(self):
@@ -38,7 +38,8 @@ class RNN(object):
          * run the rnn model
         """
 
-        for step in xrange(CONST.epoch):
+#        for step in xrange(CONST.epoch):
+        for step in xrange(100):
             if self.is_train is True:
                 loss = self._run_train(step)
                 if step % 100 == 0:
@@ -59,8 +60,11 @@ class RNN(object):
 
     @classmethod
     def _run_pred(cls, step):
-        print cls.sess.run([tf.shape(cls.pred), cls.sz_y])
         return cls.sess.run(cls.pred, feed_dict={cls.idx: step})
+
+    @classmethod
+    def _train_set(cls, is_train):
+        cls.is_train = is_train
 
     @classmethod
     def _save_model(cls):
@@ -75,9 +79,9 @@ class RNN(object):
         cls.saver.restore(cls.sess, directory)
 
     @classmethod
-    def _initialize(cls, train):
+    def _initialize(cls):
         cls.sess = tf.Session()
-        if train is True:
+        if cls.is_train is True:
             cls.sess.run(tf.global_variables_initializer())
         else:
             cls._restore_checkpoint("./NeuralNetExamples/checkpoint/rnn.ckpt")
@@ -94,8 +98,8 @@ class RNN(object):
     def _gen_sim_data(cls):
         ts_x = tf.constant(range(CONST.samples+1), dtype=tf.float32)
         ts_y = tf.sin(ts_x*0.1)
-        cls.sz_y = tf.shape(ts_y)
-        cls._line_plot("sin_x", ts_y, CONST.samples+1)
+        cls.sz_y = ts_y
+        cls._line_plot("sin_x", ts_y, 1000)
 
         sz_batch = (CONST.samples/CONST.state_size, CONST.state_size, CONST.input_vector_size)
         cls.ts_batch_y = tf.reshape(ts_y[:-1], sz_batch)
@@ -124,7 +128,15 @@ class RNN(object):
         cls.batch_label = tf.unpack(cls.batch_label, axis=1)
         cls.output, _ = tf.nn.rnn(rnn_cell, cls.input_set, dtype=tf.float32)
         cls.pred = tf.matmul(cls.output, cls.linear_w) + cls.linear_b
-        cls._line_plot("pred", cls.pred, 1)
+
+        if cls.is_train is not True:
+            cls._serialize_pred()
+
+    @classmethod
+    def _serialize_pred(cls):
+        cls.pred_sin = tf.reshape(cls.pred, (1000))
+        cls._line_plot("pred_sin", cls.pred_sin, 1000)
+
 
     @classmethod
     def _build_train(cls):
@@ -141,15 +153,13 @@ class RNN(object):
     @classmethod
     def _line_plot(cls, name, tensor, length):
         cls.length = length
-        cls.plot = tf.cond(tf.rank(tensor) > 1,
-        lambda: tf.pack(tensor, 1)[cls.idx],
-        lambda: tensor[cls.idx])
+        cls.plot = tensor[cls.idx]
         tf.summary.scalar(name, cls.plot)
 
     @classmethod
     def _line_plot_draw(cls):
         summaries = tf.summary.merge_all()
-        writer = tf.summary.FileWriter("./tensorboard")
+        writer = tf.summary.FileWriter("./NeuralNetExamples/tensorboard")
         for i in xrange(cls.length):
             summary_str = cls.sess.run(summaries, {cls.idx: i})
             writer.add_summary(summary_str, i)
