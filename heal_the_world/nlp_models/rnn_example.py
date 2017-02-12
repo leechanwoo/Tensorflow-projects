@@ -11,8 +11,8 @@ CONSTANT.DEFINE_integer("state_size", 5, "state size in rnn ")
 CONSTANT.DEFINE_integer("recurrent", 5, "number of recurrent hidden layer")
 CONSTANT.DEFINE_integer("input_vector_size", 1, "input vector size")
 CONSTANT.DEFINE_float("learning_rate", 0.001, "learning rate for optimizer")
-CONSTANT.DEFINE_string("ckpt_dir", "./NeuralNetExamples/checkpoint/rnn.ckpt", "check point log dir")
-CONSTANT.DEFINE_string("tensorboard_dir", "./NeuralNetExamples/tensorboard", "tensorboard log dir")
+CONSTANT.DEFINE_string("ckpt_dir", "./tensorflow_on_air/checkpoint/rnn.ckpt", "check point log dir")
+CONSTANT.DEFINE_string("tensorboard_dir", "./tensorflow_on_air/tensorboard", "tensorboard log dir")
 CONST = CONSTANT.FLAGS
 
 class RNN(object):
