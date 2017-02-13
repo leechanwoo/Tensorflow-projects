@@ -9,11 +9,16 @@ CONST	heal_the_world/nlp_models/rnn_example.py	/^CONST = CONSTANT.FLAGS$/;"	kind
 CONST	heal_the_world/nlp_models/skip_gram_example.py	/^CONST = CONSTANT.FLAGS$/;"	kind:variable	line:13
 CONST	tensorflow_on_air/example_sources/cnn_example.py	/^CONST = CONST.FLAGS$/;"	kind:variable	line:37
 CONST	tensorflow_on_air/example_sources/cnn_example.py	/^CONST = tf.app.flags$/;"	kind:variable	line:25
+CONST	tensorflow_on_air/example_sources/rnn_example.py	/^CONST = CONSTANT.FLAGS$/;"	kind:variable	line:17
+CONST	tensorflow_on_air/example_sources/rnn_example_live.py	/^CONST = CONSTANT.FLAGS$/;"	kind:variable	line:11
 CONSTANT	heal_the_world/nlp_models/rnn_example.py	/^CONSTANT = tf.app.flags$/;"	kind:variable	line:7
 CONSTANT	heal_the_world/nlp_models/skip_gram_example.py	/^CONSTANT = tf.app.flags$/;"	kind:variable	line:7
+CONSTANT	tensorflow_on_air/example_sources/rnn_example.py	/^CONSTANT = tf.app.flags$/;"	kind:variable	line:7
+CONSTANT	tensorflow_on_air/example_sources/rnn_example_live.py	/^CONSTANT = tf.app.flags$/;"	kind:variable	line:7
 FLAGS	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^FLAGS = flags.FLAGS$/;"	kind:variable	line:86
 Options	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^class Options(object):$/;"	kind:class	line:89
 RNN	heal_the_world/nlp_models/rnn_example.py	/^class RNN(object):$/;"	kind:class	line:18
+RNN	tensorflow_on_air/example_sources/rnn_example.py	/^class RNN(object):$/;"	kind:class	line:19
 SkipGram	heal_the_world/nlp_models/skip_gram_example.py	/^class SkipGram(object):$/;"	kind:class	line:16
 Word2vec	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^class Word2vec(object):$/;"	kind:class	line:151
 __init__	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def __init__(self):$/;"	kind:member	line:92
@@ -21,43 +26,66 @@ __init__	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def _
 __init__	heal_the_world/nlp_models/rnn_example.py	/^    def __init__(self):$/;"	kind:member	line:22
 __init__	heal_the_world/nlp_models/skip_gram_example.py	/^    def __init__(self):$/;"	kind:member	line:20
 __init__	tensorflow_on_air/example_sources/cnn_example.py	/^    def __init__(self, image_name_list=None, label_name_list=None):$/;"	kind:member	line:51
+__init__	tensorflow_on_air/example_sources/rnn_example.py	/^    def __init__(self):$/;"	kind:member	line:23
+__init__	tensorflow_on_air/example_sources/rnn_example_live.py	/^    def __init__(self):$/;"	kind:member	line:18
 _build_batch	heal_the_world/nlp_models/rnn_example.py	/^    def _build_batch(cls):$/;"	kind:member	line:102
 _build_batch	tensorflow_on_air/example_sources/cnn_example.py	/^    def _build_batch(cls):$/;"	kind:member	line:156
+_build_batch	tensorflow_on_air/example_sources/rnn_example.py	/^    def _build_batch(cls):$/;"	kind:member	line:108
 _build_graph	tensorflow_on_air/example_sources/cnn_example.py	/^    def _build_graph(self):$/;"	kind:member	line:193
 _build_model	heal_the_world/nlp_models/rnn_example.py	/^    def _build_model(cls):$/;"	kind:member	line:117
+_build_model	tensorflow_on_air/example_sources/rnn_example.py	/^    def _build_model(cls):$/;"	kind:member	line:121
 _build_skipgram	heal_the_world/nlp_models/skip_gram_example.py	/^    def _build_skipgram(cls):$/;"	kind:member	line:67
 _build_train	heal_the_world/nlp_models/rnn_example.py	/^    def _build_train(cls):$/;"	kind:member	line:130
+_build_train	tensorflow_on_air/example_sources/rnn_example.py	/^    def _build_train(cls):$/;"	kind:member	line:133
 _close_session	heal_the_world/nlp_models/rnn_example.py	/^    def _close_session(cls):$/;"	kind:member	line:86
 _close_session	heal_the_world/nlp_models/skip_gram_example.py	/^    def _close_session(cls):$/;"	kind:member	line:106
 _close_session	tensorflow_on_air/example_sources/cnn_example.py	/^    def _close_session(cls):$/;"	kind:member	line:118
+_close_session	tensorflow_on_air/example_sources/rnn_example.py	/^    def _close_session(cls):$/;"	kind:member	line:93
+_close_session	tensorflow_on_air/example_sources/rnn_example_live.py	/^    def _close_session(cls):$/;"	kind:member	line:39
 _conv	tensorflow_on_air/example_sources/cnn_example.py	/^    def _conv(cls, tensor1, tensor2):$/;"	kind:member	line:220
 _gen_onehots	heal_the_world/nlp_models/skip_gram_example.py	/^    def _gen_onehots(cls):$/;"	kind:member	line:55
 _gen_sim_data	heal_the_world/nlp_models/rnn_example.py	/^    def _gen_sim_data(cls):$/;"	kind:member	line:92
+_gen_sim_data	tensorflow_on_air/example_sources/rnn_example.py	/^    def _gen_sim_data(cls):$/;"	kind:member	line:99
+_gen_sim_data	tensorflow_on_air/example_sources/rnn_example_live.py	/^    def _gen_sim_data(cls):$/;"	kind:member	line:43
 _get_embeddings	heal_the_world/nlp_models/skip_gram_example.py	/^    def _get_embeddings(cls):$/;"	kind:member	line:96
 _initialization	heal_the_world/nlp_models/skip_gram_example.py	/^    def _initialization(cls):$/;"	kind:member	line:101
 _initialize	heal_the_world/nlp_models/rnn_example.py	/^    def _initialize(cls):$/;"	kind:member	line:80
 _initialize	tensorflow_on_air/example_sources/cnn_example.py	/^    def _initialize(cls):$/;"	kind:member	line:108
+_initialize	tensorflow_on_air/example_sources/rnn_example.py	/^    def _initialize(cls):$/;"	kind:member	line:87
+_initialize	tensorflow_on_air/example_sources/rnn_example_live.py	/^    def _initialize(cls):$/;"	kind:member	line:35
 _line_plot	heal_the_world/nlp_models/rnn_example.py	/^    def _line_plot(cls, name, tensor, length):$/;"	kind:member	line:142
+_line_plot	tensorflow_on_air/example_sources/rnn_example.py	/^    def _line_plot(cls, name, tensor):$/;"	kind:member	line:145
 _line_plot_draw	heal_the_world/nlp_models/rnn_example.py	/^    def _line_plot_draw(cls):$/;"	kind:member	line:148
+_line_plot_draw	tensorflow_on_air/example_sources/rnn_example.py	/^    def _line_plot_draw(cls, num_plot):$/;"	kind:member	line:156
 _load_csv	tensorflow_on_air/example_sources/cnn_example.py	/^    def _load_csv(cls, filename_list):$/;"	kind:member	line:143
 _load_png	tensorflow_on_air/example_sources/cnn_example.py	/^    def _load_png(cls, filename_list):$/;"	kind:member	line:128
 _max_pool	tensorflow_on_air/example_sources/cnn_example.py	/^    def _max_pool(cls, tensor):$/;"	kind:member	line:224
 _mean_square_error	heal_the_world/nlp_models/rnn_example.py	/^    def _mean_square_error(cls, batch, label):$/;"	kind:member	line:138
+_mean_square_error	tensorflow_on_air/example_sources/rnn_example.py	/^    def _mean_square_error(cls, batch, label):$/;"	kind:member	line:141
 _predict	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def _predict(self, analogy):$/;"	kind:member	line:454
+_print	tensorflow_on_air/example_sources/rnn_example.py	/^    def _print(cls, tensor):$/;"	kind:member	line:151
 _restore_checkpoint	heal_the_world/nlp_models/rnn_example.py	/^    def _restore_checkpoint(cls, directory):$/;"	kind:member	line:76
+_restore_checkpoint	tensorflow_on_air/example_sources/rnn_example.py	/^    def _restore_checkpoint(cls, directory):$/;"	kind:member	line:83
 _run_pred	heal_the_world/nlp_models/rnn_example.py	/^    def _run_pred(cls, step):$/;"	kind:member	line:63
+_run_pred	tensorflow_on_air/example_sources/rnn_example.py	/^    def _run_pred(cls):$/;"	kind:member	line:70
 _run_prediction	heal_the_world/nlp_models/skip_gram_example.py	/^    def _run_prediction(cls):$/;"	kind:member	line:50
+_run_session	tensorflow_on_air/example_sources/rnn_example_live.py	/^    def _run_session(cls):$/;"	kind:member	line:30
 _run_train	heal_the_world/nlp_models/rnn_example.py	/^    def _run_train(cls, step):$/;"	kind:member	line:57
 _run_train	heal_the_world/nlp_models/skip_gram_example.py	/^    def _run_train(cls):$/;"	kind:member	line:45
+_run_train	tensorflow_on_air/example_sources/rnn_example.py	/^    def _run_train(cls):$/;"	kind:member	line:64
 _save_model	heal_the_world/nlp_models/rnn_example.py	/^    def _save_model(cls):$/;"	kind:member	line:68
+_save_model	tensorflow_on_air/example_sources/rnn_example.py	/^    def _save_model(cls):$/;"	kind:member	line:75
 _serialize_pred	heal_the_world/nlp_models/rnn_example.py	/^    def _serialize_pred(cls):$/;"	kind:member	line:125
 _set_variables	heal_the_world/nlp_models/rnn_example.py	/^    def _set_variables(cls):$/;"	kind:member	line:109
 _set_variables	heal_the_world/nlp_models/skip_gram_example.py	/^    def _set_variables(cls):$/;"	kind:member	line:63
 _set_variables	tensorflow_on_air/example_sources/cnn_example.py	/^    def _set_variables(self):$/;"	kind:member	line:176
+_set_variables	tensorflow_on_air/example_sources/rnn_example.py	/^    def _set_variables(cls):$/;"	kind:member	line:113
 _start_shell	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^def _start_shell(local_ns=None):$/;"	kind:function	line:526
 _to_plot	heal_the_world/nlp_models/rnn_example.py	/^    def _to_plot(cls):$/;"	kind:member	line:158
+_to_plot	tensorflow_on_air/example_sources/rnn_example.py	/^    def _to_plot(cls):$/;"	kind:member	line:166
 _train_thread_body	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def _train_thread_body(self):$/;"	kind:member	line:392
 _write_checkpoint	heal_the_world/nlp_models/rnn_example.py	/^    def _write_checkpoint(cls, directory):$/;"	kind:member	line:72
+_write_checkpoint	tensorflow_on_air/example_sources/rnn_example.py	/^    def _write_checkpoint(cls, directory):$/;"	kind:member	line:79
 access_token	heal_the_world/example_souces/crawler/facebook_crawling.py	/^   access_token = app_id + "|" + app_secret$/;"	kind:variable	line:103
 accuracy	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))$/;"	kind:variable	line:68
 analogy	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def analogy(self, w0, w1, w2):$/;"	kind:member	line:503
@@ -129,6 +157,8 @@ main	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^def main(_):$
 main	heal_the_world/nlp_models/rnn_example.py	/^def main(_):$/;"	kind:function	line:161
 main	heal_the_world/nlp_models/skip_gram_example.py	/^def main(_):$/;"	kind:function	line:109
 main	tensorflow_on_air/example_sources/cnn_example.py	/^def main(_):$/;"	kind:function	line:227
+main	tensorflow_on_air/example_sources/rnn_example.py	/^def main(_):$/;"	kind:function	line:169
+main	tensorflow_on_air/example_sources/rnn_example_live.py	/^def main(_):$/;"	kind:function	line:51
 maybe_download	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^def maybe_download(filename, expected_bytes):$/;"	kind:function	line:18
 nce_biases	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^        nce_biases = tf.Variable(tf.zeros([vocabulary_size]))$/;"	kind:variable	line:145
 nce_loss	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def nce_loss(self, true_logits, sampled_logits):$/;"	kind:member	line:257
@@ -152,12 +182,17 @@ plot_with_labels	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^def 
 pred	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^pred = tf.matmul(drop_fc, out_w) + out_b$/;"	kind:variable	line:62
 prediction	heal_the_world/nlp_models/rnn_example.py	/^    def prediction(self):$/;"	kind:member	line:44
 prediction	heal_the_world/nlp_models/skip_gram_example.py	/^    def prediction(self):$/;"	kind:member	line:36
+prediction	tensorflow_on_air/example_sources/rnn_example.py	/^    def prediction(self):$/;"	kind:member	line:54
 processFacebookPageFeedStatus	heal_the_world/example_souces/crawler/facebook_crawling.py	/^def processFacebookPageFeedStatus(status):$/;"	kind:function	line:53
 read_analogies	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def read_analogies(self):$/;"	kind:member	line:164
 read_data	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^def read_data(filename):$/;"	kind:function	line:30
 request_until_succeed	heal_the_world/example_souces/crawler/facebook_crawling.py	/^def request_until_succeed(url):$/;"	kind:function	line:16
+rnn_example	tensorflow_on_air/example_sources/rnn_example_live.py	/^class rnn_example(object):$/;"	kind:class	line:13
 rnn_example.py	heal_the_world/nlp_models/rnn_example.py	1;"	kind:file	line:1
+rnn_example.py	tensorflow_on_air/example_sources/rnn_example.py	1;"	kind:file	line:1
+rnn_example_live.py	tensorflow_on_air/example_sources/rnn_example_live.py	1;"	kind:file	line:1
 run	tensorflow_on_air/example_sources/cnn_example.py	/^    def run(self):$/;"	kind:member	line:73
+run	tensorflow_on_air/example_sources/rnn_example_live.py	/^    def run(self):$/;"	kind:member	line:22
 save_vocab	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def save_vocab(self):$/;"	kind:member	line:381
 scrapeFacebookPageFeedStatus	heal_the_world/example_souces/crawler/facebook_crawling.py	/^def scrapeFacebookPageFeedStatus(page_id, access_token):$/;"	kind:function	line:70
 sim	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^            sim = similarity.eval()$/;"	kind:variable	line:191
@@ -176,6 +211,7 @@ train_inputs	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^    trai
 train_labels	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^    train_labels = tf.placeholder(tf.int32, shape=[batch_size, 1])$/;"	kind:variable	line:134
 training	heal_the_world/nlp_models/rnn_example.py	/^    def training(self):$/;"	kind:member	line:32
 training	heal_the_world/nlp_models/skip_gram_example.py	/^    def training(self):$/;"	kind:member	line:24
+training	tensorflow_on_air/example_sources/rnn_example.py	/^    def training(self):$/;"	kind:member	line:41
 tsne	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^    tsne = TSNE(perplexity=30, n_components=2, init='pca', n_iter=5000)$/;"	kind:variable	line:207
 url	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^url = 'http:\/\/mattmahoney.net\/dc\/'$/;"	kind:variable	line:16
 valid_dataset	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^    valid_dataset = tf.constant(valid_examples, dtype=tf.int32)$/;"	kind:variable	line:135
