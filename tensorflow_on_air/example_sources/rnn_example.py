@@ -7,8 +7,8 @@ import tensorflow as tf
 CONSTANT = tf.app.flags
 CONSTANT.DEFINE_integer("epoch", 1000, "epoch when learning")
 CONSTANT.DEFINE_integer("samples", 1000, "number of samples for learning")
-CONSTANT.DEFINE_integer("state_size", 500, "state size in rnn ")
-CONSTANT.DEFINE_integer("recurrent", 10, "number of recurrent hidden layer")
+CONSTANT.DEFINE_integer("state_size", 100, "state size in rnn ")
+CONSTANT.DEFINE_integer("recurrent", 200, "number of recurrent hidden layer")
 CONSTANT.DEFINE_integer("input_vector_size", 1, "input vector size")
 CONSTANT.DEFINE_float("learning_rate", 0.001, "learning rate for optimizer")
 CONSTANT.DEFINE_string("ckpt_dir", "./tensorflow_on_air/checkpoint/rnn.ckpt", "check point log dir")
@@ -174,7 +174,7 @@ def main(_):
     """
     print "code start"
     rnn = RNN()
-    rnn.prediction()
+    rnn.training()
     print "end process"
 
 if __name__ == "__main__":
