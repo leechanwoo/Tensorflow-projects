@@ -162,7 +162,7 @@ main	heal_the_world/nlp_models/skip_gram_example.py	/^def main(_):$/;"	kind:func
 main	tensorflow_on_air/example_sources/cnn_example.py	/^def main(_):$/;"	kind:function	line:227
 main	tensorflow_on_air/example_sources/rnn_example.py	/^def main(_):$/;"	kind:function	line:171
 main	tensorflow_on_air/example_sources/rnn_example_live.py	/^def main(_):$/;"	kind:function	line:51
-main	test_python/test.py	/^def main(_):$/;"	kind:function	line:4
+main	test_python/test.py	/^def main(_):$/;"	kind:function	line:6
 maybe_download	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^def maybe_download(filename, expected_bytes):$/;"	kind:function	line:18
 movie_subtitles.py	heal_the_world/example_souces/crawler/movie_subtitles.py	1;"	kind:file	line:1
 nce_biases	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^        nce_biases = tf.Variable(tf.zeros([vocabulary_size]))$/;"	kind:variable	line:145
