@@ -14,7 +14,7 @@ CONSTANT.DEFINE_float("learning_rate", 0.001, "learning rate for optimizer")
 CONSTANT.DEFINE_string("ckpt_dir", "./checkpoint/rnn.ckpt", "check point log dir")
 CONSTANT.DEFINE_string("tensorboard_dir", "./tensorboard", "tensorboard log dir")
 CONSTANT.DEFINE_integer("batch_size", 100, "mini batch size")
-CONSTANT.DEFINE_bool("is_training_mode", False, "select training or prediction")
+CONSTANT.DEFINE_bool("is_training_mode", True, "select training or prediction")
 CONST = CONSTANT.FLAGS
 
 class RNN(object):
@@ -23,36 +23,36 @@ class RNN(object):
     """
     def __init__(self):
         self._to_plot()
-        print "ready to visualize"
+        print("ready to visualize")
         self._gen_sim_data()
-        print "generated data"
+        print("generated data")
         self._build_batch()
-        print "batch built"
+        print("batch built")
         self._set_variables()
-        print "variables set"
+        print("variables set")
         self._build_model()
-        print "model built"
+        print("model built")
         self._save_model()
-        print "saver created"
+        print("saver created")
         self._build_train()
-        print "loss graph created"
+        print("loss graph created")
         self._initialize()
-        print "initialized"
+        print("initialized")
 
     def training(self):
         """
         * run prediction
         """
-        print "start training...."
-        for step in xrange(CONST.epoch):
+        print("start training....")
+        for step in range(CONST.epoch):
             loss = self._run_train()
             if step % 10 == 0:
-                print "step: ", step
-                print "loss: ", loss
+                print("step: ", step)
+                print("loss: ", loss)
 
-        print "model saving..."
+        print("model saving...")
         self._write_checkpoint(CONST.ckpt_dir)
-        print "training done"
+        print("training done")
 
     def prediction(self):
         """
@@ -99,13 +99,13 @@ class RNN(object):
 
     @classmethod
     def _gen_sim_data(cls):
-        ts_x = tf.constant(range(CONST.samples+1), dtype=tf.float32)
+        ts_x = tf.constant([i for i in range(CONST.samples+1)], dtype=tf.float32)
         ts_y = tf.sin(ts_x*0.01)
         # print "ts_y"
         #cls._print(ts_y[1:21])
 
         sz_batch = (
-            CONST.samples/(CONST.recurrent*CONST.input_vector_size),
+            int(CONST.samples/(CONST.recurrent*CONST.input_vector_size)),
             CONST.recurrent,
             CONST.input_vector_size)
 
@@ -129,7 +129,7 @@ class RNN(object):
 
     @classmethod
     def _build_model(cls):
-        rnn_cell = tf.nn.rnn_cell.LSTMCell(CONST.state_size)
+        rnn_cell = tf.nn.rnn_cell.RNNCell(CONST.state_size)
         cls.input_set = tf.unpack(cls.b_train, axis=1)
         cls.label_set = tf.unpack(cls.b_label, axis=1)
         cls.output, _ = tf.nn.rnn(rnn_cell, cls.input_set, dtype=tf.float32)
@@ -142,7 +142,7 @@ class RNN(object):
     @classmethod
     def _build_train(cls):
         cls.loss = 0
-        for i in xrange(CONST.recurrent):
+        for i in range(CONST.recurrent):
             cls.loss += cls._mean_square_error(cls.pred[i], cls.label_set[i])
 
         cls.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(cls.loss)
@@ -167,7 +167,7 @@ class RNN(object):
             coord = tf.train.Coordinator()
             thread = tf.train.start_queue_runners(sess, coord)
             sess.run(tf.global_variables_initializer())
-            print sess.run(tensor)
+            print(sess.run(tensor))
             coord.request_stop()
             coord.join(thread)
 
@@ -175,7 +175,7 @@ class RNN(object):
     def _line_plot_draw(cls, num_plot):
         summaries = tf.summary.merge_all()
         writer = tf.summary.FileWriter(CONST.tensorboard_dir)
-        for i in xrange(num_plot):
+        for i in range(num_plot):
             summary_str = cls.sess.run(summaries, {cls.idx: i})
             writer.add_summary(summary_str, i)
             writer.flush()
@@ -189,13 +189,13 @@ def main(_):
     """
     * code start here
     """
-    print "code start"
+    print("code start")
     rnn = RNN()
     if CONST.is_training_mode is True:
         rnn.training()
     else:
         rnn.prediction()
-    print "end process"
+    print("end process")
 
 if __name__ == "__main__":
     tf.app.run()

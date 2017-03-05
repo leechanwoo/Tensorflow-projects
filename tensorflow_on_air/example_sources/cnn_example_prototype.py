@@ -3,16 +3,16 @@ import os
 #from PIL import Image
 import tensorflow as tf
 
-image_dir = "../Temp_data_Set/Test_Dataset_png/"
-image_width = 61
-image_height = 49
+image_dir = "/home/chanwoo/Sources/Temp_data_Set/DataSet/image_jpeg"
+image_width = 194
+image_height = 146
 
 image_list = os.listdir(image_dir)
 
-for i in xrange(len(image_list)):
+for i in range(len(image_list)):
     image_list[i] = image_dir + image_list[i]
 
-label_dir = "../Temp_data_Set/Test_Dataset_csv/Label.csv"
+label_dir = "/home/chanwoo/Sources/Temp_data_Set/DataSet/label_csv/Label.csv"
 label_list = [label_dir]
 
 imagename_queue = tf.train.string_input_producer(image_list)
@@ -24,13 +24,13 @@ label_reader = tf.TextLineReader()
 image_key, image_value = image_reader.read(imagename_queue)
 label_key, label_value = label_reader.read(labelname_queue)
 
-image_decoded = tf.cast(tf.image.decode_png(image_value), tf.float32)
+image_decoded = tf.cast(tf.image.decode_jpeg(image_value, channels=3), tf.float32)
 label_decoded = tf.cast(tf.decode_csv(label_value, record_defaults=[[0]]), tf.float32)
 
 label = tf.reshape(label_decoded, [1])
-image = tf.reshape(image_decoded, [image_width, image_height, 1])
+image = tf.reshape(image_decoded, [image_width, image_height, 3])
 
-x, y_= tf.train.shuffle_batch(tensors=[image, label], batch_size=32, num_threads=4, capacity=5000, min_after_dequeue=100)
+x, y_= tf.train.shuffle_batch(tensors=[image, label], batch_size=1, num_threads=4, capacity=5000, min_after_dequeue=100)
 
 # parameters
 hidden1_w = tf.Variable(tf.truncated_normal([5,5,1,32]))
@@ -75,8 +75,8 @@ with tf.Session() as sess:
 
     for i in range(100):
         sess.run(train)
-        print "loss: ", sess.run(loss)
-        print "accuracy: ", sess.run(accuracy)
+        print ("loss: ", sess.run(loss))
+        print ("accuracy: ", sess.run(accuracy))
     
     coord.request_stop()
     coord.join(thread)
