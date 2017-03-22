@@ -42,7 +42,7 @@ def download_data(download_url, filename, save_file):
 
 if __name__ == "__main__":
 
-    download_url, filename, save_file = get_filename()
+    # download_url, filename, save_file = get_filename()
     # download_data(download_url, filename, save_file)
 
     # with open(save_file, 'r', encoding='utf-8') as f:
