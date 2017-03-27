@@ -3,6 +3,7 @@
 """
 
 import tensorflow as tf
+import matplotlib.pyplot as plt
 
 CONSTANT = tf.app.flags
 CONSTANT.DEFINE_integer("samples", 1000, "simulation data samples")
@@ -64,14 +65,17 @@ class rnn_example(object):
     @classmethod
     def _build_model(cls):
         rnn_cell = tf.contrib.rnn.BasicRNNCell(CONST.state_size)
-        output, _ = tf.contrib.rnn.static_rnn(rnn_cell, tf.unstack(cls.b_train, axis=1), dtype=tf.float32)
+        output, _ = tf.nn.dynamic_rnn(rnn_cell, tf.unstack(cls.b_train, axis=1), dtype=tf.float32)
 
 def main(_):
     """
      * code begins here
     """
-    rnn = rnn_example()
-    rnn.run()
+    # rnn = rnn_example()
+    # rnn.run()
+
+    plt.plot([1, 2, 3, 4])
+    plt.show()
 
 if __name__ == "__main__":
     tf.app.run()
