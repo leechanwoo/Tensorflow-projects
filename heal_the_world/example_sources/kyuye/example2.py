@@ -35,8 +35,8 @@ init = tf.global_variables_initializer()
 saver = tf.train.Saver()
 
 with tf.Session() as sess:
-    sess.run(init)
-    #saver.restore(sess, 'test_save')
+    # sess.run(init)
+    saver.restore(sess, './heal_the_world/example_sources/test')
     print()
     print("training start")
 
@@ -44,7 +44,7 @@ with tf.Session() as sess:
         _, _cost, _cost_mean, _pred, _lab = sess.run([train, cost, cost_mean, y, y_], feed_dict)
         if i % 50 == 0:
             print("training error: ", _cost_mean)
-    saver.save(sess, './heal_the_world/example_sources/test')
+    # path = saver.save(sess, './heal_the_world/example_sources/test')
     print()
     print("cost of each data: ")
     print(_cost)
@@ -61,3 +61,5 @@ with tf.Session() as sess:
     print()
     for i in range(4):
         print("data[%d] "%(i), data[i], " is ", "increasing" if _pred[i] > 0.5 else "decreasing")
+
+    print(path)
