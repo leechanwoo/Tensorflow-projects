@@ -88,7 +88,7 @@ _to_plot	tensorflow_on_air/example_sources/rnn_example.py	/^    def _to_plot(cls
 _train_thread_body	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def _train_thread_body(self):$/;"	kind:member	line:392
 _write_checkpoint	heal_the_world/nlp_models/rnn_example.py	/^    def _write_checkpoint(cls, directory):$/;"	kind:member	line:81
 _write_checkpoint	tensorflow_on_air/example_sources/rnn_example.py	/^    def _write_checkpoint(cls, directory):$/;"	kind:member	line:82
-a	heal_the_world/example_souces/kyuye/kyuye.py	/^    a = sess.run(layer,feed_dict)$/;"	kind:variable	line:25
+a	heal_the_world/example_souces/kyuye/kyuye.py	/^    a = sess.run(layer,feed_dict)$/;"	kind:variable	line:29
 access_token	heal_the_world/example_souces/crawler/facebook_crawling.py	/^   access_token = app_id + "|" + app_secret$/;"	kind:variable	line:103
 accuracy	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))$/;"	kind:variable	line:68
 analogy	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def analogy(self, w0, w1, w2):$/;"	kind:member	line:503
@@ -97,6 +97,7 @@ app_secret	heal_the_world/example_souces/crawler/facebook_crawling.py	/^   app_s
 average_loss	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^    average_loss = 0$/;"	kind:variable	line:172
 batch_print	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^        batch_print = session.run([train_inputs], feed_dict=feed_dict)$/;"	kind:variable	line:179
 batch_size	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^batch_size = 128$/;"	kind:variable	line:121
+bias	heal_the_world/example_souces/kyuye/kyuye.py	/^bias = tf.Variable(tf.zeros(shape=(1)))$/;"	kind:variable	line:17
 biases	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^                       biases=nce_biases,$/;"	kind:variable	line:149
 build_dataset	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^def build_dataset(words):$/;"	kind:function	line:35
 build_eval_graph	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def build_eval_graph(self):$/;"	kind:member	line:291
@@ -109,7 +110,10 @@ const	heal_the_world/example_souces/kyuye/example.py	/^const = tf.constant("hell
 coord	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^    coord = tf.train.Coordinator()$/;"	kind:variable	line:71
 correct_prediction	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^correct_prediction = tf.equal(tf.argmax(pred,1), tf.argmax(y_,1))$/;"	kind:variable	line:67
 cost	heal_the_world/example_souces/kyuye/example2.py	/^cost = -y_*tf.log(y) - (1-y_)*tf.log(1-y)$/;"	kind:variable	line:29
+cost_function	heal_the_world/example_souces/kyuye/kyuye.py	/^cost_function = -plh_label*tf.log(layer) - (1-plh_label)*tf.log(1-layer)$/;"	kind:variable	line:22
 cost_mean	heal_the_world/example_souces/kyuye/example2.py	/^cost_mean = tf.reduce_mean(cost)$/;"	kind:variable	line:30
+cost_mean	heal_the_world/example_souces/kyuye/kyuye.py	/^cost_mean = tf.reduce_mean(cost_function)$/;"	kind:variable	line:23
+cost_output	heal_the_world/example_souces/kyuye/kyuye.py	/^    cost_output = sess.run(cost_function)$/;"	kind:variable	line:31
 data	heal_the_world/example_souces/kyuye/example2.py	/^data = [[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],$/;"	kind:variable	line:3
 data	heal_the_world/example_souces/kyuye/kyuye.py	/^data = [[1,2,3,4,5,6,7,8,9,10],$/;"	kind:variable	line:3
 data_index	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^data_index=0$/;"	kind:variable	line:111
@@ -126,7 +130,7 @@ facebook_crawling.py	heal_the_world/example_souces/crawler/facebook_crawling.py	
 fc_b	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^fc_b = tf.Variable(tf.zeros([10]))$/;"	kind:variable	line:43
 fc_w	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^fc_w = tf.Variable(tf.truncated_normal([49*61*64, 10]))$/;"	kind:variable	line:42
 feed_dict	heal_the_world/example_souces/kyuye/example2.py	/^feed_dict = {x: data, y_: label}$/;"	kind:variable	line:12
-feed_dict	heal_the_world/example_souces/kyuye/kyuye.py	/^feed_dict = {plh : data, plh2 : label}$/;"	kind:variable	line:13
+feed_dict	heal_the_world/example_souces/kyuye/kyuye.py	/^feed_dict = {plh_data : data, plh_label : label}$/;"	kind:variable	line:13
 feed_dict	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^        feed_dict = {train_inputs: batch_inputs, train_labels: batch_labels}$/;"	kind:variable	line:176
 filename	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^filename = maybe_download('text8.zip', 31344016)$/;"	kind:variable	line:97
 final_embeddings	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^    final_embeddings = normalized_embeddings.eval()$/;"	kind:variable	line:201
@@ -208,11 +212,11 @@ out_b	heal_the_world/example_souces/kyuye/example2.py	/^out_b = tf.Variable(tf.z
 out_b	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^out_b = tf.Variable(tf.zeros([1]))$/;"	kind:variable	line:46
 out_w	heal_the_world/example_souces/kyuye/example2.py	/^out_w = tf.Variable(tf.random_normal((10, 1)), dtype=tf.float32)$/;"	kind:variable	line:24
 out_w	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^out_w = tf.Variable(tf.truncated_normal([10, 1]))$/;"	kind:variable	line:45
+output	heal_the_world/example_souces/kyuye/kyuye.py	/^    output = sess.run(train)$/;"	kind:variable	line:30
 page_id	heal_the_world/example_souces/crawler/facebook_crawling.py	/^   page_id = 'nytimes'$/;"	kind:variable	line:105
 plh	heal_the_world/example_souces/kyuye/example.py	/^plh = tf.placeholder(dtype=tf.int32)$/;"	kind:variable	line:5
-plh	heal_the_world/example_souces/kyuye/kyuye.py	/^plh = tf.placeholder(dtype=tf.float32, shape=(4,10))$/;"	kind:variable	line:10
-plh2	heal_the_world/example_souces/kyuye/kyuye.py	/^plh2 = tf.placeholder(dtype=tf.float32, shape=(4))$/;"	kind:variable	line:11
-plh2	heal_the_world/example_souces/kyuye/kyuye.py	/^plh2 = tf.reshape(plh2,shape=(1,4))$/;"	kind:variable	line:15
+plh_data	heal_the_world/example_souces/kyuye/kyuye.py	/^plh_data = tf.placeholder(dtype=tf.float32, shape=(4,10))$/;"	kind:variable	line:10
+plh_label	heal_the_world/example_souces/kyuye/kyuye.py	/^plh_label = tf.placeholder(dtype=tf.float32, shape=(4))$/;"	kind:variable	line:11
 plot_only	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^    plot_only = 500$/;"	kind:variable	line:208
 plot_with_labels	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^def plot_with_labels(low_dim_embs, labels, filename='tsne.png'):$/;"	kind:function	line:82
 pred	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^pred = tf.matmul(drop_fc, out_w) + out_b$/;"	kind:variable	line:62
@@ -224,7 +228,7 @@ project_opened	heal_the_world/example_souces/kyuye/.ropeproject/config.py	/^def 
 read_analogies	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def read_analogies(self):$/;"	kind:member	line:164
 read_data	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^def read_data(filename):$/;"	kind:function	line:30
 request_until_succeed	heal_the_world/example_souces/crawler/facebook_crawling.py	/^def request_until_succeed(url):$/;"	kind:function	line:16
-result	heal_the_world/example_souces/kyuye/kyuye.py	/^result = tf.matmul(plh,var) + var2$/;"	kind:variable	line:19
+result	heal_the_world/example_souces/kyuye/kyuye.py	/^result = tf.matmul(plh_data,weight) + bias$/;"	kind:variable	line:19
 rnn_example	tensorflow_on_air/example_sources/rnn_example_live.py	/^class rnn_example(object):$/;"	kind:class	line:17
 rnn_example.py	heal_the_world/nlp_models/rnn_example.py	1;"	kind:file	line:1
 rnn_example.py	tensorflow_on_air/example_sources/rnn_example.py	1;"	kind:file	line:1
@@ -245,6 +249,7 @@ thread	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^    thread =
 top_k	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^                top_k = 8$/;"	kind:variable	line:194
 tprint	tensorflow_on_air/example_sources/cnn_example.py	/^    def tprint(self, message, tensors):$/;"	kind:member	line:90
 train	heal_the_world/example_souces/kyuye/example2.py	/^train = tf.train.GradientDescentOptimizer(0.01).minimize(cost_mean)$/;"	kind:variable	line:31
+train	heal_the_world/example_souces/kyuye/kyuye.py	/^train = tf.train.GradientDescentOptimizer(0.01).minimize(cost_mean)$/;"	kind:variable	line:24
 train	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^    def train(self):$/;"	kind:member	line:400
 train	tensorflow_on_air/example_sources/cnn_example_prototype.py	/^train = tf.train.AdamOptimizer(1e-4).minimize(loss)$/;"	kind:variable	line:65
 train_inputs	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^    train_inputs = tf.placeholder(tf.int32, shape=[batch_size])$/;"	kind:variable	line:133
@@ -261,9 +266,8 @@ valid_size	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^valid_size
 valid_window	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^valid_window = 100$/;"	kind:variable	line:126
 valid_word	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^                valid_word = reverse_dictionary[valid_examples[i]]$/;"	kind:variable	line:193
 var	heal_the_world/example_souces/kyuye/example.py	/^var = tf.Variable(22)$/;"	kind:variable	line:4
-var	heal_the_world/example_souces/kyuye/kyuye.py	/^var = tf.Variable(tf.random_normal(shape=(10,10)))$/;"	kind:variable	line:16
-var2	heal_the_world/example_souces/kyuye/kyuye.py	/^var2 = tf.Variable(tf.zeros(shape=(10)))$/;"	kind:variable	line:17
 vocabulary_size	heal_the_world/example_souces/word2vec/word2vec_basic.py	/^vocabulary_size = 50000$/;"	kind:variable	line:102
+weight	heal_the_world/example_souces/kyuye/kyuye.py	/^weight = tf.Variable(tf.random_normal(shape=(10,1)))$/;"	kind:variable	line:16
 word2vec	heal_the_world/example_souces/word2vec/word2vec_advenced.py	/^word2vec = tf.load_op_library(os.path.join(os.path.dirname($/;"	kind:variable	line:16
 word2vec_advenced.py	heal_the_world/example_souces/word2vec/word2vec_advenced.py	1;"	kind:file	line:1
 word2vec_basic.py	heal_the_world/example_souces/word2vec/word2vec_basic.py	1;"	kind:file	line:1
