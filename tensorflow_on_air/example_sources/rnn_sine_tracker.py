@@ -131,14 +131,12 @@ class RNN(object):
         cls.pred = tf.matmul(cls.output, cls.linear_w) + cls.linear_b
 
         cls._print(cls.pred)
-        # cls._line_plot("1_label_set", tf.transpose(cls.label_set, (1, 0, 2)))
-        # cls._line_plot("2_pred_sin", tf.transpose(cls.pred, (1, 0, 2)))
 
     @classmethod
     def _build_train(cls):
         cls.loss = 0
         for i in range(CONST.recurrent):
-            cls.loss += cls._mean_square_error(cls.pred[i], cls.label_set[i])
+            cls.loss += tf.losses.mean_squared_error(tf.unstack(cls.b_label, axis=1)[i], cls.pred[i])
 
         cls.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(cls.loss)
 
