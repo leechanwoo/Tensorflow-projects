@@ -3,6 +3,7 @@
 """
 
 import tensorflow as tf
+import time
 
 CONSTANT = tf.app.flags
 CONSTANT.DEFINE_integer("samples", 1000, "simulation data samples")
@@ -111,9 +112,11 @@ def main(_):
     """
      * code begins here
     """
+    tic = time.clock()
     rnn = rnn_example()
     rnn.run()
+    toc = time.clock()
+    print("totla process time: ", toc - tic)
 
 if __name__ == "__main__":
     tf.app.run()
-    

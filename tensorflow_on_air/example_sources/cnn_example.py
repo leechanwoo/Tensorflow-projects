@@ -37,7 +37,7 @@ CONST.DEFINE_integer("min_after_dequeue", 100, "minimum number of data when dequ
 CONST = CONST.FLAGS
 
 
-class CNN(object):
+class CNN():
     """
     convolutional neural network class
 

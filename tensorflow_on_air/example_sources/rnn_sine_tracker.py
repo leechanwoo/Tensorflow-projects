@@ -1,90 +1,49 @@
 """
-* this is rnn example
+ * rnn tutorial
 """
 
 import tensorflow as tf
 
 CONSTANT = tf.app.flags
-CONSTANT.DEFINE_integer("epoch", 1000, "epoch when learning")
-CONSTANT.DEFINE_integer("batch", 100, "number of samples for learning")
-CONSTANT.DEFINE_integer("state_size", 100, "state size in rnn ")
-CONSTANT.DEFINE_integer("recurrent", 10, "number of recurrent hidden layer")
-CONSTANT.DEFINE_integer("input_vector_size", 10, "input vector size")
-CONSTANT.DEFINE_float("learning_rate", 0.001, "learning rate for optimizer")
-CONSTANT.DEFINE_string("ckpt_dir", "./checkpoint/rnn", "check point log dir")
-CONSTANT.DEFINE_string("tensorboard_dir", "./tensorboard", "tensorboard log dir")
-CONSTANT.DEFINE_integer("batch_size", 10, "mini batch size")
+CONSTANT.DEFINE_integer("samples", 1000, "simulation data samples")
+CONSTANT.DEFINE_integer("hidden", 5, "hidden layers in rnn")
+CONSTANT.DEFINE_integer("vec_size", 1, "input vector size into rnn")
+CONSTANT.DEFINE_integer("batch_size", 10, "minibatch size for training")
+CONSTANT.DEFINE_integer("state_size", 15, "state size in rnn")
+CONSTANT.DEFINE_integer("recurrent", 5, "recurrent step")
+CONSTANT.DEFINE_float("learning_rate", 0.01, 'learning rate for optimizer')
 CONST = CONSTANT.FLAGS
 
-class RNN(object):
+class rnn_example(object):
     """
-     * RNN model
+     * rnn example module
     """
-    def __init__(self):
-        self._to_plot()
-        print("ready to visualize")
-        self._gen_sim_data()
-        print("generated data")
-        self._build_batch()
-        print("batch built")
-        self._set_variables()
-        print("variables set")
-        self._build_model()
-        print("model built")
-        self._save_model()
-        print("saver created")
-        self._build_train()
-        print("loss graph created")
-        self._initialize()
-        print("initialized")
 
-    def training(self):
+    def __init__(self):
+        self._gen_sim_data()
+        self._build_batch()
+        self._build_model()
+        self._build_train()
+        self._initialize()
+        # self._pack_test()
+
+    def run(self):
         """
-        * run prediction
+         * run the rnn model
         """
-        print("start training....")
-        for step in range(CONST.epoch):
-            loss = self._run_train()
-            if step % 10 == 0:
-                print("step: ", step)
+        self.sess.run(tf.global_variables_initializer())
+
+        for i in range(1000):
+            _, loss = self.sess.run([self.train, self.loss])
+            if i % 20 == 0:
                 print("loss: ", loss)
 
-            if step % 100 == 0:
-                self._write_checkpoint(CONST.ckpt_dir)
-                print("model saved...")
-
-        print("training done")
-
-    def prediction(self):
-        """
-         * run training
-        """
-        self._run_pred()
-        self._line_plot_draw(100)
         self._close_session()
 
     @classmethod
-    def _run_train(cls):
-        cls.sess.run(tf.global_variables_initializer())
-        _, loss = cls.sess.run([cls.train, cls.loss])
-        return loss
-
-    @classmethod
-    def _run_pred(cls):
-        cls._restore_checkpoint(CONST.ckpt_dir)
-        return cls.sess.run(cls.pred)
-
-    @classmethod
-    def _save_model(cls):
-        cls.saver = tf.train.Saver()
-
-    @classmethod
-    def _write_checkpoint(cls, directory):
-        cls.saver.save(cls.sess, directory)
-
-    @classmethod
-    def _restore_checkpoint(cls, directory):
-        cls.saver.restore(cls.sess, directory)
+    def _run_session(cls, run_graph):
+        output = cls.sess.run(run_graph)
+        return output
 
     @classmethod
     def _initialize(cls):
@@ -100,89 +59,60 @@ class RNN(object):
 
     @classmethod
     def _gen_sim_data(cls):
-        samples = CONST.batch * CONST.input_vector_size * CONST.recurrent
-        ts_x = tf.constant([0.1*i for i in range(samples+CONST.input_vector_size)], dtype=tf.float32)
-        ts_y = tf.sin(ts_x)
-        sz_batch = (CONST.batch, CONST.recurrent, CONST.input_vector_size)
-        cls.ts_batch_y = tf.reshape(ts_y[:-CONST.input_vector_size], sz_batch)
-        cls.ts_batch_y_ = tf.reshape(ts_y[CONST.input_vector_size:], sz_batch)
-        # cls._line_plot("sin_x", ts_y)
+        cls.ts_x = tf.constant([i for i in range(CONST.samples+1)], dtype=tf.float32)
+        ts_y = tf.sin(cls.ts_x * 0.1)
+
+        sp_batch = (int(CONST.samples/CONST.hidden), CONST.hidden, CONST.vec_size)
+        cls.batch_input = tf.reshape(ts_y[:-1], sp_batch)
+        cls.batch_label = tf.reshape(ts_y[1:], sp_batch)
 
     @classmethod
     def _build_batch(cls):
-        batch_set = [cls.ts_batch_y, cls.ts_batch_y_]
+        batch_set = [cls.batch_input, cls.batch_label]
         cls.b_train, cls.b_label = tf.train.batch(batch_set, CONST.batch_size, enqueue_many=True)
-
-    @classmethod
-    def _set_variables(cls):
-        linear_w = tf.Variable(tf.truncated_normal([CONST.recurrent, CONST.state_size, CONST.input_vector_size]))
-        linear_b = tf.Variable(tf.zeros([CONST.recurrent, 1, 1]))
-
-        cls.linear_w = tf.unstack(linear_w)
-        cls.linear_b = tf.unstack(linear_b)
 
     @classmethod
     def _build_model(cls):
         rnn_cell = tf.contrib.rnn.BasicRNNCell(CONST.state_size)
-        cls.input_set = tf.unstack(cls.b_train, axis=1)
-        cls.label_set = tf.unstack(cls.b_label, axis=1)
+        cls.output, _ = tf.contrib.rnn.static_rnn(rnn_cell, tf.unstack(cls.b_train, axis=1), dtype=tf.float32)
 
-        cls.output, _ = tf.contrib.rnn.static_rnn(rnn_cell, cls.input_set, dtype=tf.float32)
-        cls.pred = tf.matmul(cls.output, cls.linear_w) + cls.linear_b
+        cls.output_w = tf.Variable(tf.truncated_normal([CONST.hidden, CONST.state_size, CONST.vec_size]))
+        output_b = tf.Variable(tf.zeros([CONST.vec_size]))
 
-        cls._print(cls.pred)
+        cls.pred = tf.matmul(cls.output, cls.output_w ) + output_b
+        # print("output_w: ", cls.sess.run(tf.shape(cls.output_w)))
+        # print("output: ", cls.sess.run(tf.shape(cls.output)))
 
     @classmethod
     def _build_train(cls):
         cls.loss = 0
-        for i in range(CONST.recurrent):
+        for i in range(CONST.hidden):
             cls.loss += tf.losses.mean_squared_error(tf.unstack(cls.b_label, axis=1)[i], cls.pred[i])
-
         cls.train = tf.train.AdamOptimizer(CONST.learning_rate).minimize(cls.loss)
 
-    @classmethod
-    def _mean_square_error(cls, batch, label):
-        return tf.reduce_mean(tf.pow(batch - label, 2))
 
     # @classmethod
-    # def _line_plot(cls, name, tensor):
-    #     ts_vector = tf.reshape(tf.stack(tensor), (CONST.batch_size*CONST.recurrent,))
-    #     plot = ts_vector[cls.idx]
-    #     tf.summary.scalar(name, plot)
+    # def _pack_test(cls):
+    #     a = tf.constant([1, 2, 3])
+    #     b = tf.constant([4, 5, 6])
+    #     c = tf.constant([7, 8, 9])
+    #     matrix = tf.stack([a, b, c])
 
-    @classmethod
-    def _line_plot(cls, name, tensor):
-        plot = tensor[cls.idx]
-        tf.summary.scalar(name, plot)
+    #     print(cls.sess.run(matrix))
+    #     print(cls.sess.run(tf.shape(matrix)))
 
-    @classmethod
-    def _print(cls, tensor):
-        with tf.Session() as sess:
-            print(sess.run(tensor))
+    #     sequence = tf.unstack(matrix, axis=1)
+    #     print(cls.sess.run(sequence[0]))
+    #     print(cls.sess.run(sequence[1]))
+    #     print(cls.sess.run(sequence[2]))
 
-    @classmethod
-    def _line_plot_draw(cls, num_plot):
-        summaries = tf.summary.merge_all()
-        writer = tf.summary.FileWriter(CONST.tensorboard_dir)
-        for i in range(num_plot):
-            summary_str = cls.sess.run(summaries, {cls.idx: i})
-            writer.add_summary(summary_str, i)
-            writer.flush()
-        writer.close()
-
-    @classmethod
-    def _to_plot(cls):
-        cls.idx = tf.placeholder(tf.int32)
-
+    
 def main(_):
     """
-    * code start here
+     * code begins here
     """
-    print("code start")
-    rnn = RNN()
-    rnn.training()
-    # rnn.prediction()
-    print("end process")
+    rnn = rnn_example()
+    rnn.run()
 
 if __name__ == "__main__":
     tf.app.run()
