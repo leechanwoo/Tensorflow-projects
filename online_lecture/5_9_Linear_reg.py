@@ -2,6 +2,19 @@
 import tensorflow as tf
 import matplotlib.pyplot as plt
 
+
+data = []
+for i in range(1000):
+    data.append(list(range(i, 10+i)))
+
+label = list(range(10, 1009))
+
+x = tf.constant(data, tf.float32)
+y_ = tf.constant(label, tf.float32)
+
+exit()
+
+
 x = tf.constant(list(range(1000)), tf.float32)
 y = 0.1 * x + 5.8 + tf.random_normal(shape=(1000,), stddev=100)
 target = 0.1 * x + 5.8
