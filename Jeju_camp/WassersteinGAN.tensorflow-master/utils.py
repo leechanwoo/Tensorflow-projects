@@ -2,12 +2,12 @@ __author__ = 'shekkizh'
 # Utils used with tensorflow implemetation
 import tensorflow as tf
 import numpy as np
-import scipy.misc as misc
+#import scipy.misc as misc
 import os, sys
 from six.moves import urllib
 import tarfile
 import zipfile
-from tqdm import trange
+#from tqdm import trange
 import matplotlib.pyplot as plt
 from mpl_toolkits.axes_grid1 import ImageGrid
 
