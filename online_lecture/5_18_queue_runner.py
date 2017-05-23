@@ -1,6 +1,5 @@
 
 import tensorflow as tf
-from PIL import Image
 import os
 
 #design CNN
