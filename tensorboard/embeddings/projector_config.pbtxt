@@ -1,0 +1,4 @@
+embeddings {
+  tensor_name: "word_embedding:0"
+  metadata_path: "./tensorboard/embeddings/label.csv"
+}
