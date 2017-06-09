@@ -26,6 +26,9 @@ batch_label = tf.reshape(gen_y[1:], batch_shape)
 batch_set = [batch_input, batch_label]
 x, y_ = tf.train.batch(batch_set, 50, enqueue_many=True)
 
+print(x)
+print(y_)
+
 rnn_cell = tf.contrib.rnn.BasicRNNCell(state_size)
 output, _ = tf.contrib.rnn.static_rnn(rnn_cell, tf.unstack(x, axis=1), dtype=tf.float32)
 

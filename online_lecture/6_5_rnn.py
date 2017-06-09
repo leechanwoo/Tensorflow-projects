@@ -1,19 +1,20 @@
 
 import tensorflow as tf
 
-state_size = 100
-time_step = 5
+state_size = 20
+input_tensor = tf.constant([
+    [ 0, 0, 0, 0, 0],
+    [ 1, 1, 1, 1, 1],
+    [ 2, 2, 2, 2, 2],
+    [ 3, 3, 3, 3, 3],
+    [ 4, 4, 4, 4, 4]])
 
-# [tensor, tensor, tensor, ... , tensor]
-#input_tensor = [tf.constant(), tf.constant(2), tf.constant(3), tf.constant(4), tf.constant(5)]
-input_tensor = [
-    tf.constant(
-        [ [i] for j in range(100)], dtype=tf.float32) 
-        for i in range(time_step)
-]
+inputs = tf.unstack(input_tensor)
 
-for i in input_tensor:
-    print(i)
+print(inputs)
 
 cell = tf.contrib.rnn.BasicRNNCell(state_size)
-output, state = tf.contrib.rnn.static_rnn(cell, input_tensor, dtype=tf.float32)
+output, state = tf.contrib.rnn.static_rnn(cell, inputs, dtype=tf.float32)
+
+
+
