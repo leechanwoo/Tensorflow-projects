@@ -1,0 +1,5290 @@
+node {
+  name: "Const"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+          dim {
+            size: 100
+          }
+          dim {
+            size: 10
+          }
+        }
+        tensor_content: "\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A\000\000\000\000\000\000\200?\000\000\000@\000\000@@\000\000\200@\000\000\240@\000\000\300@\000\000\340@\000\000\000A\000\000\020A"
+      }
+    }
+  }
+}
+node {
+  name: "dense/kernel/Initializer/random_uniform/shape"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\n\000\000\000\n\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "dense/kernel/Initializer/random_uniform/min"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: -0.547722578049
+      }
+    }
+  }
+}
+node {
+  name: "dense/kernel/Initializer/random_uniform/max"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.547722578049
+      }
+    }
+  }
+}
+node {
+  name: "dense/kernel/Initializer/random_uniform/RandomUniform"
+  op: "RandomUniform"
+  input: "dense/kernel/Initializer/random_uniform/shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "seed"
+    value {
+      i: 0
+    }
+  }
+  attr {
+    key: "seed2"
+    value {
+      i: 0
+    }
+  }
+}
+node {
+  name: "dense/kernel/Initializer/random_uniform/sub"
+  op: "Sub"
+  input: "dense/kernel/Initializer/random_uniform/max"
+  input: "dense/kernel/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense/kernel/Initializer/random_uniform/mul"
+  op: "Mul"
+  input: "dense/kernel/Initializer/random_uniform/RandomUniform"
+  input: "dense/kernel/Initializer/random_uniform/sub"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense/kernel/Initializer/random_uniform"
+  op: "Add"
+  input: "dense/kernel/Initializer/random_uniform/mul"
+  input: "dense/kernel/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense/kernel"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 10
+        }
+        dim {
+          size: 10
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "dense/kernel/Assign"
+  op: "Assign"
+  input: "dense/kernel"
+  input: "dense/kernel/Initializer/random_uniform"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "dense/kernel/read"
+  op: "Identity"
+  input: "dense/kernel"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense/bias/Initializer/Const"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/bias"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+          dim {
+            size: 10
+          }
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "dense/bias"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/bias"
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 10
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "dense/bias/Assign"
+  op: "Assign"
+  input: "dense/bias"
+  input: "dense/bias/Initializer/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/bias"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "dense/bias/read"
+  op: "Identity"
+  input: "dense/bias"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/bias"
+      }
+    }
+  }
+}
+node {
+  name: "dense/MatMul"
+  op: "MatMul"
+  input: "Const"
+  input: "dense/kernel/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "dense/BiasAdd"
+  op: "BiasAdd"
+  input: "dense/MatMul"
+  input: "dense/bias/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+}
+node {
+  name: "dense_1/kernel/Initializer/random_uniform/shape"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\n\000\000\000\n\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "dense_1/kernel/Initializer/random_uniform/min"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: -0.547722578049
+      }
+    }
+  }
+}
+node {
+  name: "dense_1/kernel/Initializer/random_uniform/max"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.547722578049
+      }
+    }
+  }
+}
+node {
+  name: "dense_1/kernel/Initializer/random_uniform/RandomUniform"
+  op: "RandomUniform"
+  input: "dense_1/kernel/Initializer/random_uniform/shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "seed"
+    value {
+      i: 0
+    }
+  }
+  attr {
+    key: "seed2"
+    value {
+      i: 0
+    }
+  }
+}
+node {
+  name: "dense_1/kernel/Initializer/random_uniform/sub"
+  op: "Sub"
+  input: "dense_1/kernel/Initializer/random_uniform/max"
+  input: "dense_1/kernel/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_1/kernel/Initializer/random_uniform/mul"
+  op: "Mul"
+  input: "dense_1/kernel/Initializer/random_uniform/RandomUniform"
+  input: "dense_1/kernel/Initializer/random_uniform/sub"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_1/kernel/Initializer/random_uniform"
+  op: "Add"
+  input: "dense_1/kernel/Initializer/random_uniform/mul"
+  input: "dense_1/kernel/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_1/kernel"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 10
+        }
+        dim {
+          size: 10
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "dense_1/kernel/Assign"
+  op: "Assign"
+  input: "dense_1/kernel"
+  input: "dense_1/kernel/Initializer/random_uniform"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "dense_1/kernel/read"
+  op: "Identity"
+  input: "dense_1/kernel"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_1/bias/Initializer/Const"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/bias"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+          dim {
+            size: 10
+          }
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "dense_1/bias"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/bias"
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 10
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "dense_1/bias/Assign"
+  op: "Assign"
+  input: "dense_1/bias"
+  input: "dense_1/bias/Initializer/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/bias"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "dense_1/bias/read"
+  op: "Identity"
+  input: "dense_1/bias"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/bias"
+      }
+    }
+  }
+}
+node {
+  name: "dense_2/MatMul"
+  op: "MatMul"
+  input: "dense/BiasAdd"
+  input: "dense_1/kernel/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "dense_2/BiasAdd"
+  op: "BiasAdd"
+  input: "dense_2/MatMul"
+  input: "dense_1/bias/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+}
+node {
+  name: "dense_2/kernel/Initializer/random_uniform/shape"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\n\000\000\000\n\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "dense_2/kernel/Initializer/random_uniform/min"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: -0.547722578049
+      }
+    }
+  }
+}
+node {
+  name: "dense_2/kernel/Initializer/random_uniform/max"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.547722578049
+      }
+    }
+  }
+}
+node {
+  name: "dense_2/kernel/Initializer/random_uniform/RandomUniform"
+  op: "RandomUniform"
+  input: "dense_2/kernel/Initializer/random_uniform/shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "seed"
+    value {
+      i: 0
+    }
+  }
+  attr {
+    key: "seed2"
+    value {
+      i: 0
+    }
+  }
+}
+node {
+  name: "dense_2/kernel/Initializer/random_uniform/sub"
+  op: "Sub"
+  input: "dense_2/kernel/Initializer/random_uniform/max"
+  input: "dense_2/kernel/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_2/kernel/Initializer/random_uniform/mul"
+  op: "Mul"
+  input: "dense_2/kernel/Initializer/random_uniform/RandomUniform"
+  input: "dense_2/kernel/Initializer/random_uniform/sub"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_2/kernel/Initializer/random_uniform"
+  op: "Add"
+  input: "dense_2/kernel/Initializer/random_uniform/mul"
+  input: "dense_2/kernel/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_2/kernel"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 10
+        }
+        dim {
+          size: 10
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "dense_2/kernel/Assign"
+  op: "Assign"
+  input: "dense_2/kernel"
+  input: "dense_2/kernel/Initializer/random_uniform"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "dense_2/kernel/read"
+  op: "Identity"
+  input: "dense_2/kernel"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_2/bias/Initializer/Const"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/bias"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+          dim {
+            size: 10
+          }
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "dense_2/bias"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/bias"
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 10
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "dense_2/bias/Assign"
+  op: "Assign"
+  input: "dense_2/bias"
+  input: "dense_2/bias/Initializer/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/bias"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "dense_2/bias/read"
+  op: "Identity"
+  input: "dense_2/bias"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/bias"
+      }
+    }
+  }
+}
+node {
+  name: "dense_3/MatMul"
+  op: "MatMul"
+  input: "dense_2/BiasAdd"
+  input: "dense_2/kernel/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "dense_3/BiasAdd"
+  op: "BiasAdd"
+  input: "dense_3/MatMul"
+  input: "dense_2/bias/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+}
+node {
+  name: "dense_3/kernel/Initializer/random_uniform/shape"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\n\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "dense_3/kernel/Initializer/random_uniform/min"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: -0.73854893446
+      }
+    }
+  }
+}
+node {
+  name: "dense_3/kernel/Initializer/random_uniform/max"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.73854893446
+      }
+    }
+  }
+}
+node {
+  name: "dense_3/kernel/Initializer/random_uniform/RandomUniform"
+  op: "RandomUniform"
+  input: "dense_3/kernel/Initializer/random_uniform/shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "seed"
+    value {
+      i: 0
+    }
+  }
+  attr {
+    key: "seed2"
+    value {
+      i: 0
+    }
+  }
+}
+node {
+  name: "dense_3/kernel/Initializer/random_uniform/sub"
+  op: "Sub"
+  input: "dense_3/kernel/Initializer/random_uniform/max"
+  input: "dense_3/kernel/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_3/kernel/Initializer/random_uniform/mul"
+  op: "Mul"
+  input: "dense_3/kernel/Initializer/random_uniform/RandomUniform"
+  input: "dense_3/kernel/Initializer/random_uniform/sub"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_3/kernel/Initializer/random_uniform"
+  op: "Add"
+  input: "dense_3/kernel/Initializer/random_uniform/mul"
+  input: "dense_3/kernel/Initializer/random_uniform/min"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_3/kernel"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 10
+        }
+        dim {
+          size: 1
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "dense_3/kernel/Assign"
+  op: "Assign"
+  input: "dense_3/kernel"
+  input: "dense_3/kernel/Initializer/random_uniform"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "dense_3/kernel/read"
+  op: "Identity"
+  input: "dense_3/kernel"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+}
+node {
+  name: "dense_3/bias/Initializer/Const"
+  op: "Const"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/bias"
+      }
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+          dim {
+            size: 1
+          }
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "dense_3/bias"
+  op: "VariableV2"
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/bias"
+      }
+    }
+  }
+  attr {
+    key: "container"
+    value {
+      s: ""
+    }
+  }
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "shape"
+    value {
+      shape {
+        dim {
+          size: 1
+        }
+      }
+    }
+  }
+  attr {
+    key: "shared_name"
+    value {
+      s: ""
+    }
+  }
+}
+node {
+  name: "dense_3/bias/Assign"
+  op: "Assign"
+  input: "dense_3/bias"
+  input: "dense_3/bias/Initializer/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/bias"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "validate_shape"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "dense_3/bias/read"
+  op: "Identity"
+  input: "dense_3/bias"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/bias"
+      }
+    }
+  }
+}
+node {
+  name: "dense_4/MatMul"
+  op: "MatMul"
+  input: "dense_3/BiasAdd"
+  input: "dense_3/kernel/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "dense_4/BiasAdd"
+  op: "BiasAdd"
+  input: "dense_4/MatMul"
+  input: "dense_3/bias/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+}
+node {
+  name: "dense_4/Sigmoid"
+  op: "Sigmoid"
+  input: "dense_4/BiasAdd"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "ones_like/Shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "ones_like/Const"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 1.0
+      }
+    }
+  }
+}
+node {
+  name: "ones_like"
+  op: "Fill"
+  input: "ones_like/Shape"
+  input: "ones_like/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy/zeros_like"
+  op: "ZerosLike"
+  input: "dense_4/Sigmoid"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy/GreaterEqual"
+  op: "GreaterEqual"
+  input: "dense_4/Sigmoid"
+  input: "sigmoid_cross_entropy_loss/xentropy/zeros_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy/Select"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/xentropy/GreaterEqual"
+  input: "dense_4/Sigmoid"
+  input: "sigmoid_cross_entropy_loss/xentropy/zeros_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy/Neg"
+  op: "Neg"
+  input: "dense_4/Sigmoid"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy/Select_1"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/xentropy/GreaterEqual"
+  input: "sigmoid_cross_entropy_loss/xentropy/Neg"
+  input: "dense_4/Sigmoid"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy/mul"
+  op: "Mul"
+  input: "dense_4/Sigmoid"
+  input: "ones_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy/sub"
+  op: "Sub"
+  input: "sigmoid_cross_entropy_loss/xentropy/Select"
+  input: "sigmoid_cross_entropy_loss/xentropy/mul"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy/Exp"
+  op: "Exp"
+  input: "sigmoid_cross_entropy_loss/xentropy/Select_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy/Log1p"
+  op: "Log1p"
+  input: "sigmoid_cross_entropy_loss/xentropy/Exp"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/xentropy"
+  op: "Add"
+  input: "sigmoid_cross_entropy_loss/xentropy/sub"
+  input: "sigmoid_cross_entropy_loss/xentropy/Log1p"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/assert_broadcastable/weights"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 1.0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/assert_broadcastable/weights/shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/assert_broadcastable/weights/rank"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+        }
+        int_val: 0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/assert_broadcastable/values/shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/assert_broadcastable/values/rank"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+        }
+        int_val: 2
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  op: "NoOp"
+}
+node {
+  name: "sigmoid_cross_entropy_loss/ToFloat_1/x"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 1.0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Mul"
+  op: "Mul"
+  input: "sigmoid_cross_entropy_loss/xentropy"
+  input: "sigmoid_cross_entropy_loss/ToFloat_1/x"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Const"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\000\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Sum"
+  op: "Sum"
+  input: "sigmoid_cross_entropy_loss/Mul"
+  input: "sigmoid_cross_entropy_loss/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/Equal/y"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/Equal"
+  op: "Equal"
+  input: "sigmoid_cross_entropy_loss/ToFloat_1/x"
+  input: "sigmoid_cross_entropy_loss/num_present/Equal/y"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/zeros_like"
+  op: "ZerosLike"
+  input: "sigmoid_cross_entropy_loss/ToFloat_1/x"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/ones_like/Shape"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/ones_like/Const"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 1.0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/ones_like"
+  op: "Fill"
+  input: "sigmoid_cross_entropy_loss/num_present/ones_like/Shape"
+  input: "sigmoid_cross_entropy_loss/num_present/ones_like/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/Select"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/num_present/Equal"
+  input: "sigmoid_cross_entropy_loss/num_present/zeros_like"
+  input: "sigmoid_cross_entropy_loss/num_present/ones_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/assert_broadcastable/weights/shape"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/assert_broadcastable/weights/rank"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+        }
+        int_val: 0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/assert_broadcastable/values/shape"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/assert_broadcastable/values/rank"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+        }
+        int_val: 2
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/assert_broadcastable/static_scalar_check_success"
+  op: "NoOp"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/ones_like/Shape"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  input: "^sigmoid_cross_entropy_loss/num_present/broadcast_weights/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/ones_like/Const"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  input: "^sigmoid_cross_entropy_loss/num_present/broadcast_weights/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 1.0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/ones_like"
+  op: "Fill"
+  input: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/ones_like/Shape"
+  input: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/ones_like/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/broadcast_weights"
+  op: "Mul"
+  input: "sigmoid_cross_entropy_loss/num_present/Select"
+  input: "sigmoid_cross_entropy_loss/num_present/broadcast_weights/ones_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present/Const"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\000\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/num_present"
+  op: "Sum"
+  input: "sigmoid_cross_entropy_loss/num_present/broadcast_weights"
+  input: "sigmoid_cross_entropy_loss/num_present/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Const_1"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Sum_1"
+  op: "Sum"
+  input: "sigmoid_cross_entropy_loss/Sum"
+  input: "sigmoid_cross_entropy_loss/Const_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Greater/y"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Greater"
+  op: "Greater"
+  input: "sigmoid_cross_entropy_loss/num_present"
+  input: "sigmoid_cross_entropy_loss/Greater/y"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Equal/y"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Equal"
+  op: "Equal"
+  input: "sigmoid_cross_entropy_loss/num_present"
+  input: "sigmoid_cross_entropy_loss/Equal/y"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/ones_like/Shape"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/ones_like/Const"
+  op: "Const"
+  input: "^sigmoid_cross_entropy_loss/assert_broadcastable/static_scalar_check_success"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 1.0
+      }
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/ones_like"
+  op: "Fill"
+  input: "sigmoid_cross_entropy_loss/ones_like/Shape"
+  input: "sigmoid_cross_entropy_loss/ones_like/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/Select"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/Equal"
+  input: "sigmoid_cross_entropy_loss/ones_like"
+  input: "sigmoid_cross_entropy_loss/num_present"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/div"
+  op: "RealDiv"
+  input: "sigmoid_cross_entropy_loss/Sum_1"
+  input: "sigmoid_cross_entropy_loss/Select"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/zeros_like"
+  op: "ZerosLike"
+  input: "sigmoid_cross_entropy_loss/Sum_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "sigmoid_cross_entropy_loss/value"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/Greater"
+  input: "sigmoid_cross_entropy_loss/div"
+  input: "sigmoid_cross_entropy_loss/zeros_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/Shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "gradients/Const"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 1.0
+      }
+    }
+  }
+}
+node {
+  name: "gradients/Fill"
+  op: "Fill"
+  input: "gradients/Shape"
+  input: "gradients/Const"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/value_grad/zeros_like"
+  op: "ZerosLike"
+  input: "sigmoid_cross_entropy_loss/div"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/value_grad/Select"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/Greater"
+  input: "gradients/Fill"
+  input: "gradients/sigmoid_cross_entropy_loss/value_grad/zeros_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/value_grad/Select_1"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/Greater"
+  input: "gradients/sigmoid_cross_entropy_loss/value_grad/zeros_like"
+  input: "gradients/Fill"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/value_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/sigmoid_cross_entropy_loss/value_grad/Select"
+  input: "^gradients/sigmoid_cross_entropy_loss/value_grad/Select_1"
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/value_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/value_grad/Select"
+  input: "^gradients/sigmoid_cross_entropy_loss/value_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/value_grad/Select"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/value_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/value_grad/Select_1"
+  input: "^gradients/sigmoid_cross_entropy_loss/value_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/value_grad/Select_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/Shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/Shape_1"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/BroadcastGradientArgs"
+  op: "BroadcastGradientArgs"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/Shape"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/RealDiv"
+  op: "RealDiv"
+  input: "gradients/sigmoid_cross_entropy_loss/value_grad/tuple/control_dependency"
+  input: "sigmoid_cross_entropy_loss/Select"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/Sum"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/RealDiv"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/BroadcastGradientArgs"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/Reshape"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/Shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/Neg"
+  op: "Neg"
+  input: "sigmoid_cross_entropy_loss/Sum_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/RealDiv_1"
+  op: "RealDiv"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/Neg"
+  input: "sigmoid_cross_entropy_loss/Select"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/RealDiv_2"
+  op: "RealDiv"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/RealDiv_1"
+  input: "sigmoid_cross_entropy_loss/Select"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/mul"
+  op: "Mul"
+  input: "gradients/sigmoid_cross_entropy_loss/value_grad/tuple/control_dependency"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/RealDiv_2"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/Sum_1"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/mul"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/BroadcastGradientArgs:1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/Reshape_1"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/Sum_1"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/sigmoid_cross_entropy_loss/div_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/div_grad/Reshape_1"
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/div_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/div_grad/Reshape"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/div_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/Reshape_1"
+  input: "^gradients/sigmoid_cross_entropy_loss/div_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/div_grad/Reshape_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Sum_1_grad/Reshape/shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Sum_1_grad/Reshape"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/div_grad/tuple/control_dependency"
+  input: "gradients/sigmoid_cross_entropy_loss/Sum_1_grad/Reshape/shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Sum_1_grad/Tile/multiples"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Sum_1_grad/Tile"
+  op: "Tile"
+  input: "gradients/sigmoid_cross_entropy_loss/Sum_1_grad/Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/Sum_1_grad/Tile/multiples"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tmultiples"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Sum_grad/Reshape/shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "\001\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Sum_grad/Reshape"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/Sum_1_grad/Tile"
+  input: "gradients/sigmoid_cross_entropy_loss/Sum_grad/Reshape/shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Sum_grad/Tile/multiples"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Sum_grad/Tile"
+  op: "Tile"
+  input: "gradients/sigmoid_cross_entropy_loss/Sum_grad/Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/Sum_grad/Tile/multiples"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tmultiples"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Shape_1"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+          }
+        }
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/BroadcastGradientArgs"
+  op: "BroadcastGradientArgs"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Shape"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/mul"
+  op: "Mul"
+  input: "gradients/sigmoid_cross_entropy_loss/Sum_grad/Tile"
+  input: "sigmoid_cross_entropy_loss/ToFloat_1/x"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Sum"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/mul"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/BroadcastGradientArgs"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Reshape"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/mul_1"
+  op: "Mul"
+  input: "sigmoid_cross_entropy_loss/xentropy"
+  input: "gradients/sigmoid_cross_entropy_loss/Sum_grad/Tile"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Sum_1"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/mul_1"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/BroadcastGradientArgs:1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Reshape_1"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Sum_1"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/sigmoid_cross_entropy_loss/Mul_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/Mul_grad/Reshape_1"
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/Mul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/Mul_grad/Reshape"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/Mul_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/Reshape_1"
+  input: "^gradients/sigmoid_cross_entropy_loss/Mul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/Mul_grad/Reshape_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Shape_1"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/BroadcastGradientArgs"
+  op: "BroadcastGradientArgs"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Shape"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Sum"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/tuple/control_dependency"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/BroadcastGradientArgs"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Reshape"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Sum_1"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/Mul_grad/tuple/control_dependency"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/BroadcastGradientArgs:1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Reshape_1"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Sum_1"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy_grad/Reshape_1"
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy_grad/Reshape"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/Reshape_1"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy_grad/Reshape_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Shape_1"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/BroadcastGradientArgs"
+  op: "BroadcastGradientArgs"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Shape"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Sum"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/tuple/control_dependency"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/BroadcastGradientArgs"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Reshape"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Sum_1"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/tuple/control_dependency"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/BroadcastGradientArgs:1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Neg"
+  op: "Neg"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Sum_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Reshape_1"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Neg"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Reshape_1"
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Reshape"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Reshape_1"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/Reshape_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Log1p_grad/add/x"
+  op: "Const"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy_grad/tuple/control_dependency_1"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 1.0
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Log1p_grad/add"
+  op: "Add"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Log1p_grad/add/x"
+  input: "sigmoid_cross_entropy_loss/xentropy/Exp"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Log1p_grad/Reciprocal"
+  op: "Reciprocal"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Log1p_grad/add"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Log1p_grad/mul"
+  op: "Mul"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy_grad/tuple/control_dependency_1"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Log1p_grad/Reciprocal"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/zeros_like"
+  op: "ZerosLike"
+  input: "dense_4/Sigmoid"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/Select"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/xentropy/GreaterEqual"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/tuple/control_dependency"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/zeros_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/Select_1"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/xentropy/GreaterEqual"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/zeros_like"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/tuple/control_dependency"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/Select"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/Select_1"
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/Select"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/Select"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/Select_1"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/Select_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Shape"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Shape_1"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_INT32
+        tensor_shape {
+          dim {
+            size: 2
+          }
+        }
+        tensor_content: "d\000\000\000\001\000\000\000"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/BroadcastGradientArgs"
+  op: "BroadcastGradientArgs"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Shape"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/mul"
+  op: "Mul"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/tuple/control_dependency_1"
+  input: "ones_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Sum"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/mul"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/BroadcastGradientArgs"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Reshape"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Shape"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/mul_1"
+  op: "Mul"
+  input: "dense_4/Sigmoid"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/sub_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Sum_1"
+  op: "Sum"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/mul_1"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/BroadcastGradientArgs:1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tidx"
+    value {
+      type: DT_INT32
+    }
+  }
+  attr {
+    key: "keep_dims"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Reshape_1"
+  op: "Reshape"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Sum_1"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Shape_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "Tshape"
+    value {
+      type: DT_INT32
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Reshape_1"
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Reshape"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Reshape"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Reshape_1"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/Reshape_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Exp_grad/mul"
+  op: "Mul"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Log1p_grad/mul"
+  input: "sigmoid_cross_entropy_loss/xentropy/Exp"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/zeros_like"
+  op: "ZerosLike"
+  input: "sigmoid_cross_entropy_loss/xentropy/Neg"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/Select"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/xentropy/GreaterEqual"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Exp_grad/mul"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/zeros_like"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/Select_1"
+  op: "Select"
+  input: "sigmoid_cross_entropy_loss/xentropy/GreaterEqual"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/zeros_like"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Exp_grad/mul"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/Select"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/Select_1"
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/Select"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/Select"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/Select_1"
+  input: "^gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/Select_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/sigmoid_cross_entropy_loss/xentropy/Neg_grad/Neg"
+  op: "Neg"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/tuple/control_dependency"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/AddN"
+  op: "AddN"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/tuple/control_dependency"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/mul_grad/tuple/control_dependency"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Select_1_grad/tuple/control_dependency_1"
+  input: "gradients/sigmoid_cross_entropy_loss/xentropy/Neg_grad/Neg"
+  attr {
+    key: "N"
+    value {
+      i: 4
+    }
+  }
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/sigmoid_cross_entropy_loss/xentropy/Select_grad/Select"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_4/Sigmoid_grad/SigmoidGrad"
+  op: "SigmoidGrad"
+  input: "dense_4/Sigmoid"
+  input: "gradients/AddN"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+}
+node {
+  name: "gradients/dense_4/BiasAdd_grad/BiasAddGrad"
+  op: "BiasAddGrad"
+  input: "gradients/dense_4/Sigmoid_grad/SigmoidGrad"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+}
+node {
+  name: "gradients/dense_4/BiasAdd_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/dense_4/Sigmoid_grad/SigmoidGrad"
+  input: "^gradients/dense_4/BiasAdd_grad/BiasAddGrad"
+}
+node {
+  name: "gradients/dense_4/BiasAdd_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/dense_4/Sigmoid_grad/SigmoidGrad"
+  input: "^gradients/dense_4/BiasAdd_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_4/Sigmoid_grad/SigmoidGrad"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_4/BiasAdd_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/dense_4/BiasAdd_grad/BiasAddGrad"
+  input: "^gradients/dense_4/BiasAdd_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_4/BiasAdd_grad/BiasAddGrad"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_4/MatMul_grad/MatMul"
+  op: "MatMul"
+  input: "gradients/dense_4/BiasAdd_grad/tuple/control_dependency"
+  input: "dense_3/kernel/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "gradients/dense_4/MatMul_grad/MatMul_1"
+  op: "MatMul"
+  input: "dense_3/BiasAdd"
+  input: "gradients/dense_4/BiasAdd_grad/tuple/control_dependency"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/dense_4/MatMul_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/dense_4/MatMul_grad/MatMul"
+  input: "^gradients/dense_4/MatMul_grad/MatMul_1"
+}
+node {
+  name: "gradients/dense_4/MatMul_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/dense_4/MatMul_grad/MatMul"
+  input: "^gradients/dense_4/MatMul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_4/MatMul_grad/MatMul"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_4/MatMul_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/dense_4/MatMul_grad/MatMul_1"
+  input: "^gradients/dense_4/MatMul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_4/MatMul_grad/MatMul_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_3/BiasAdd_grad/BiasAddGrad"
+  op: "BiasAddGrad"
+  input: "gradients/dense_4/MatMul_grad/tuple/control_dependency"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+}
+node {
+  name: "gradients/dense_3/BiasAdd_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/dense_4/MatMul_grad/tuple/control_dependency"
+  input: "^gradients/dense_3/BiasAdd_grad/BiasAddGrad"
+}
+node {
+  name: "gradients/dense_3/BiasAdd_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/dense_4/MatMul_grad/tuple/control_dependency"
+  input: "^gradients/dense_3/BiasAdd_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_4/MatMul_grad/MatMul"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_3/BiasAdd_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/dense_3/BiasAdd_grad/BiasAddGrad"
+  input: "^gradients/dense_3/BiasAdd_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_3/BiasAdd_grad/BiasAddGrad"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_3/MatMul_grad/MatMul"
+  op: "MatMul"
+  input: "gradients/dense_3/BiasAdd_grad/tuple/control_dependency"
+  input: "dense_2/kernel/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "gradients/dense_3/MatMul_grad/MatMul_1"
+  op: "MatMul"
+  input: "dense_2/BiasAdd"
+  input: "gradients/dense_3/BiasAdd_grad/tuple/control_dependency"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/dense_3/MatMul_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/dense_3/MatMul_grad/MatMul"
+  input: "^gradients/dense_3/MatMul_grad/MatMul_1"
+}
+node {
+  name: "gradients/dense_3/MatMul_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/dense_3/MatMul_grad/MatMul"
+  input: "^gradients/dense_3/MatMul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_3/MatMul_grad/MatMul"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_3/MatMul_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/dense_3/MatMul_grad/MatMul_1"
+  input: "^gradients/dense_3/MatMul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_3/MatMul_grad/MatMul_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_2/BiasAdd_grad/BiasAddGrad"
+  op: "BiasAddGrad"
+  input: "gradients/dense_3/MatMul_grad/tuple/control_dependency"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+}
+node {
+  name: "gradients/dense_2/BiasAdd_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/dense_3/MatMul_grad/tuple/control_dependency"
+  input: "^gradients/dense_2/BiasAdd_grad/BiasAddGrad"
+}
+node {
+  name: "gradients/dense_2/BiasAdd_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/dense_3/MatMul_grad/tuple/control_dependency"
+  input: "^gradients/dense_2/BiasAdd_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_3/MatMul_grad/MatMul"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_2/BiasAdd_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/dense_2/BiasAdd_grad/BiasAddGrad"
+  input: "^gradients/dense_2/BiasAdd_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_2/BiasAdd_grad/BiasAddGrad"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_2/MatMul_grad/MatMul"
+  op: "MatMul"
+  input: "gradients/dense_2/BiasAdd_grad/tuple/control_dependency"
+  input: "dense_1/kernel/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "gradients/dense_2/MatMul_grad/MatMul_1"
+  op: "MatMul"
+  input: "dense/BiasAdd"
+  input: "gradients/dense_2/BiasAdd_grad/tuple/control_dependency"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/dense_2/MatMul_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/dense_2/MatMul_grad/MatMul"
+  input: "^gradients/dense_2/MatMul_grad/MatMul_1"
+}
+node {
+  name: "gradients/dense_2/MatMul_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/dense_2/MatMul_grad/MatMul"
+  input: "^gradients/dense_2/MatMul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_2/MatMul_grad/MatMul"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense_2/MatMul_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/dense_2/MatMul_grad/MatMul_1"
+  input: "^gradients/dense_2/MatMul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_2/MatMul_grad/MatMul_1"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense/BiasAdd_grad/BiasAddGrad"
+  op: "BiasAddGrad"
+  input: "gradients/dense_2/MatMul_grad/tuple/control_dependency"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "data_format"
+    value {
+      s: "NHWC"
+    }
+  }
+}
+node {
+  name: "gradients/dense/BiasAdd_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/dense_2/MatMul_grad/tuple/control_dependency"
+  input: "^gradients/dense/BiasAdd_grad/BiasAddGrad"
+}
+node {
+  name: "gradients/dense/BiasAdd_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/dense_2/MatMul_grad/tuple/control_dependency"
+  input: "^gradients/dense/BiasAdd_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense_2/MatMul_grad/MatMul"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense/BiasAdd_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/dense/BiasAdd_grad/BiasAddGrad"
+  input: "^gradients/dense/BiasAdd_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense/BiasAdd_grad/BiasAddGrad"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense/MatMul_grad/MatMul"
+  op: "MatMul"
+  input: "gradients/dense/BiasAdd_grad/tuple/control_dependency"
+  input: "dense/kernel/read"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: false
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: true
+    }
+  }
+}
+node {
+  name: "gradients/dense/MatMul_grad/MatMul_1"
+  op: "MatMul"
+  input: "Const"
+  input: "gradients/dense/BiasAdd_grad/tuple/control_dependency"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "transpose_a"
+    value {
+      b: true
+    }
+  }
+  attr {
+    key: "transpose_b"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "gradients/dense/MatMul_grad/tuple/group_deps"
+  op: "NoOp"
+  input: "^gradients/dense/MatMul_grad/MatMul"
+  input: "^gradients/dense/MatMul_grad/MatMul_1"
+}
+node {
+  name: "gradients/dense/MatMul_grad/tuple/control_dependency"
+  op: "Identity"
+  input: "gradients/dense/MatMul_grad/MatMul"
+  input: "^gradients/dense/MatMul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense/MatMul_grad/MatMul"
+      }
+    }
+  }
+}
+node {
+  name: "gradients/dense/MatMul_grad/tuple/control_dependency_1"
+  op: "Identity"
+  input: "gradients/dense/MatMul_grad/MatMul_1"
+  input: "^gradients/dense/MatMul_grad/tuple/group_deps"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@gradients/dense/MatMul_grad/MatMul_1"
+      }
+    }
+  }
+}
+node {
+  name: "GradientDescent/learning_rate"
+  op: "Const"
+  attr {
+    key: "dtype"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "value"
+    value {
+      tensor {
+        dtype: DT_FLOAT
+        tensor_shape {
+        }
+        float_val: 0.00999999977648
+      }
+    }
+  }
+}
+node {
+  name: "GradientDescent/update_dense/kernel/ApplyGradientDescent"
+  op: "ApplyGradientDescent"
+  input: "dense/kernel"
+  input: "GradientDescent/learning_rate"
+  input: "gradients/dense/MatMul_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/kernel"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "GradientDescent/update_dense/bias/ApplyGradientDescent"
+  op: "ApplyGradientDescent"
+  input: "dense/bias"
+  input: "GradientDescent/learning_rate"
+  input: "gradients/dense/BiasAdd_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense/bias"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "GradientDescent/update_dense_1/kernel/ApplyGradientDescent"
+  op: "ApplyGradientDescent"
+  input: "dense_1/kernel"
+  input: "GradientDescent/learning_rate"
+  input: "gradients/dense_2/MatMul_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/kernel"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "GradientDescent/update_dense_1/bias/ApplyGradientDescent"
+  op: "ApplyGradientDescent"
+  input: "dense_1/bias"
+  input: "GradientDescent/learning_rate"
+  input: "gradients/dense_2/BiasAdd_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_1/bias"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "GradientDescent/update_dense_2/kernel/ApplyGradientDescent"
+  op: "ApplyGradientDescent"
+  input: "dense_2/kernel"
+  input: "GradientDescent/learning_rate"
+  input: "gradients/dense_3/MatMul_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/kernel"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "GradientDescent/update_dense_2/bias/ApplyGradientDescent"
+  op: "ApplyGradientDescent"
+  input: "dense_2/bias"
+  input: "GradientDescent/learning_rate"
+  input: "gradients/dense_3/BiasAdd_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_2/bias"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "GradientDescent/update_dense_3/kernel/ApplyGradientDescent"
+  op: "ApplyGradientDescent"
+  input: "dense_3/kernel"
+  input: "GradientDescent/learning_rate"
+  input: "gradients/dense_4/MatMul_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/kernel"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "GradientDescent/update_dense_3/bias/ApplyGradientDescent"
+  op: "ApplyGradientDescent"
+  input: "dense_3/bias"
+  input: "GradientDescent/learning_rate"
+  input: "gradients/dense_4/BiasAdd_grad/tuple/control_dependency_1"
+  attr {
+    key: "T"
+    value {
+      type: DT_FLOAT
+    }
+  }
+  attr {
+    key: "_class"
+    value {
+      list {
+        s: "loc:@dense_3/bias"
+      }
+    }
+  }
+  attr {
+    key: "use_locking"
+    value {
+      b: false
+    }
+  }
+}
+node {
+  name: "GradientDescent"
+  op: "NoOp"
+  input: "^GradientDescent/update_dense/kernel/ApplyGradientDescent"
+  input: "^GradientDescent/update_dense/bias/ApplyGradientDescent"
+  input: "^GradientDescent/update_dense_1/kernel/ApplyGradientDescent"
+  input: "^GradientDescent/update_dense_1/bias/ApplyGradientDescent"
+  input: "^GradientDescent/update_dense_2/kernel/ApplyGradientDescent"
+  input: "^GradientDescent/update_dense_2/bias/ApplyGradientDescent"
+  input: "^GradientDescent/update_dense_3/kernel/ApplyGradientDescent"
+  input: "^GradientDescent/update_dense_3/bias/ApplyGradientDescent"
+}
+node {
+  name: "init"
+  op: "NoOp"
+  input: "^dense/kernel/Assign"
+  input: "^dense/bias/Assign"
+  input: "^dense_1/kernel/Assign"
+  input: "^dense_1/bias/Assign"
+  input: "^dense_2/kernel/Assign"
+  input: "^dense_2/bias/Assign"
+  input: "^dense_3/kernel/Assign"
+  input: "^dense_3/bias/Assign"
+}
+versions {
+  producer: 21
+}
