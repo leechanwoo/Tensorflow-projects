@@ -1,0 +1,20 @@
+
+CloudML Prediction API 
+https://github.com/GoogleCloudPlatform/cloudml-dist-mnist-example
+
+deploy document 
+https://cloud.google.com/ml-engine/docs/concepts/prediction-overview
+
+a to z guide line
+https://github.com/GoogleCloudPlatform/training-data-analyst/blob/master/blogs/babyweight/babyweight.ipynb
+
+cloudml tutorial
+http://liufuyang.github.io/2017/04/02/just-another-tensorflow-beginner-guide-4.html
+
+cloudml hyperparameter tuning example
+https://github.com/GoogleCloudPlatform/cloudml-samples/blob/master/census/estimator/trainer/model.py 
+https://github.com/GoogleCloudPlatform/cloudml-samples/blob/master/census/estimator/trainer/task.py
+
+cloudml distributed learning example
+https://github.com/GoogleCloudPlatform/cloudml-samples/blob/master/census/tensorflowcore/trainer/model.py
+https://github.com/GoogleCloudPlatform/cloudml-samples/blob/master/census/tensorflowcore/trainer/task.py
